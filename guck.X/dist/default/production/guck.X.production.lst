@@ -1,0 +1,2167 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Thu Jun 03 23:35:19 2021
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F628A
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	strings,global,class=STRING,delta=2,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	maintext,global,class=CODE,split=1,delta=2
+     9                           	psect	text1,local,class=CODE,merge=1,delta=2
+    10                           	psect	text2,local,class=CODE,merge=1,delta=2
+    11                           	psect	text3,local,class=CODE,merge=1,delta=2
+    12                           	psect	text4,local,class=CODE,merge=1,delta=2
+    13                           	psect	text5,local,class=CODE,merge=1,delta=2
+    14                           	psect	text6,local,class=CODE,merge=1,delta=2
+    15                           	psect	text7,local,class=CODE,merge=1,delta=2,group=1
+    16                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    17                           	dabs	1,0x7E,2
+    18  0000                     
+    19                           ; Version 2.20
+    20                           ; Generated 12/02/2020 GMT
+    21                           ; 
+    22                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    23                           ; All rights reserved.
+    24                           ; 
+    25                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    26                           ; 
+    27                           ; Redistribution and use in source and binary forms, with or without modification, are
+    28                           ; permitted provided that the following conditions are met:
+    29                           ; 
+    30                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    31                           ;        conditions and the following disclaimer.
+    32                           ; 
+    33                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    34                           ;        of conditions and the following disclaimer in the documentation and/or other
+    35                           ;        materials provided with the distribution.
+    36                           ; 
+    37                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    38                           ;        software without specific prior written permission.
+    39                           ; 
+    40                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    41                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    42                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    43                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    44                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    45                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    46                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    47                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    48                           ; 
+    49                           ; 
+    50                           ; Code-generator required, PIC16F628A Definitions
+    51                           ; 
+    52                           ; SFR Addresses
+    53  0000                     	;# 
+    54  0001                     	;# 
+    55  0002                     	;# 
+    56  0003                     	;# 
+    57  0004                     	;# 
+    58  0005                     	;# 
+    59  0006                     	;# 
+    60  000A                     	;# 
+    61  000B                     	;# 
+    62  000C                     	;# 
+    63  000E                     	;# 
+    64  000E                     	;# 
+    65  000F                     	;# 
+    66  0010                     	;# 
+    67  0011                     	;# 
+    68  0012                     	;# 
+    69  0015                     	;# 
+    70  0015                     	;# 
+    71  0016                     	;# 
+    72  0017                     	;# 
+    73  0018                     	;# 
+    74  0019                     	;# 
+    75  001A                     	;# 
+    76  001F                     	;# 
+    77  0081                     	;# 
+    78  0085                     	;# 
+    79  0086                     	;# 
+    80  008C                     	;# 
+    81  008E                     	;# 
+    82  0092                     	;# 
+    83  0098                     	;# 
+    84  0099                     	;# 
+    85  009A                     	;# 
+    86  009B                     	;# 
+    87  009C                     	;# 
+    88  009D                     	;# 
+    89  009F                     	;# 
+    90  0000                     	;# 
+    91  0001                     	;# 
+    92  0002                     	;# 
+    93  0003                     	;# 
+    94  0004                     	;# 
+    95  0005                     	;# 
+    96  0006                     	;# 
+    97  000A                     	;# 
+    98  000B                     	;# 
+    99  000C                     	;# 
+   100  000E                     	;# 
+   101  000E                     	;# 
+   102  000F                     	;# 
+   103  0010                     	;# 
+   104  0011                     	;# 
+   105  0012                     	;# 
+   106  0015                     	;# 
+   107  0015                     	;# 
+   108  0016                     	;# 
+   109  0017                     	;# 
+   110  0018                     	;# 
+   111  0019                     	;# 
+   112  001A                     	;# 
+   113  001F                     	;# 
+   114  0081                     	;# 
+   115  0085                     	;# 
+   116  0086                     	;# 
+   117  008C                     	;# 
+   118  008E                     	;# 
+   119  0092                     	;# 
+   120  0098                     	;# 
+   121  0099                     	;# 
+   122  009A                     	;# 
+   123  009B                     	;# 
+   124  009C                     	;# 
+   125  009D                     	;# 
+   126  009F                     	;# 
+   127                           
+   128                           	psect	strings
+   129  0001                     __pstrings:
+   130  0001                     stringtab:
+   131  0001                     __stringtab:
+   132  0001                     stringcode:	
+   133                           ;	String table - string pointers are 1 byte each
+   134                           
+   135  0001                     stringdir:
+   136  0001  3000               	movlw	high stringdir
+   137  0002  008A               	movwf	10
+   138  0003  0804               	movf	4,w
+   139  0004  0A84               	incf	4,f
+   140  0005  0782               	addwf	2,f
+   141  0006                     __stringbase:
+   142  0006  3400               	retlw	0
+   143  0007                     __end_of__stringtab:
+   144  0007                     lock@val:
+   145  0007  3460               	retlw	96
+   146  0008  3409               	retlw	9
+   147  0009                     __end_oflock@val:
+   148  0009                     deploy@val:
+   149  0009  3424               	retlw	36
+   150  000A  3404               	retlw	4
+   151  000B                     __end_ofdeploy@val:
+   152  001F                     _CMCONbits	set	31
+   153  0015                     _CCPR1L	set	21
+   154  0031                     _RB1	set	49
+   155  0034                     _RB4	set	52
+   156  0090                     _T2CKPS0	set	144
+   157  0091                     _T2CKPS1	set	145
+   158  00BC                     _CCP1Y	set	188
+   159  00BD                     _CCP1X	set	189
+   160  00BA                     _CCP1M2	set	186
+   161  00BB                     _CCP1M3	set	187
+   162  002B                     _RA3	set	43
+   163  002A                     _RA2	set	42
+   164  0029                     _RA1	set	41
+   165  0092                     _TMR2ON	set	146
+   166  0030                     _RB0	set	48
+   167  0092                     _PR2	set	146
+   168  0431                     _TRISB1	set	1073
+   169  0434                     _TRISB4	set	1076
+   170  042B                     _TRISA3	set	1067
+   171  042A                     _TRISA2	set	1066
+   172  0429                     _TRISA1	set	1065
+   173  0430                     _TRISB0	set	1072
+   174  040F                     _nRBPU	set	1039
+   175  0433                     _TRISB3	set	1075
+   176                           
+   177                           	psect	cinit
+   178  07FE                     start_initialization:	
+   179                           ; #config settings
+   180                           
+   181  07FE                     __initialization:
+   182  07FE                     end_of_initialization:	
+   183                           ;End of C runtime variable initialization code
+   184                           
+   185  07FE                     __end_of__initialization:
+   186  07FE  0183               	clrf	3
+   187  07FF  2E69               	ljmp	_main	;jump to C main() function
+   188                           
+   189                           	psect	cstackCOMMON
+   190  0070                     __pcstackCOMMON:
+   191  0070                     ?_deploy:
+   192  0070                     ??_deploy:	
+   193                           ; 1 bytes @ 0x0
+   194                           
+   195  0070                     ?_lock:	
+   196                           ; 1 bytes @ 0x0
+   197                           
+   198  0070                     ??_lock:	
+   199                           ; 1 bytes @ 0x0
+   200                           
+   201  0070                     ?_notifyCommandAck:	
+   202                           ; 1 bytes @ 0x0
+   203                           
+   204  0070                     ??_notifyCommandAck:	
+   205                           ; 1 bytes @ 0x0
+   206                           
+   207  0070                     ?_notifyStateChanged:	
+   208                           ; 1 bytes @ 0x0
+   209                           
+   210  0070                     ??_notifyStateChanged:	
+   211                           ; 1 bytes @ 0x0
+   212                           
+   213  0070                     ?_gotoIdleState:	
+   214                           ; 1 bytes @ 0x0
+   215                           
+   216  0070                     ??_gotoIdleState:	
+   217                           ; 1 bytes @ 0x0
+   218                           
+   219  0070                     ?_gotoLockedState:	
+   220                           ; 1 bytes @ 0x0
+   221                           
+   222  0070                     ?_main:	
+   223                           ; 1 bytes @ 0x0
+   224                           
+   225  0070                     ?___awmod:	
+   226                           ; 2 bytes @ 0x0
+   227                           
+   228  0070                     gotoIdleState@state:	
+   229                           ; 2 bytes @ 0x0
+   230                           
+   231  0070                     ___awmod@divisor:	
+   232                           ; 1 bytes @ 0x0
+   233                           
+   234                           
+   235                           ; 2 bytes @ 0x0
+   236  0070                     	ds	1
+   237  0071                     deploy@j:
+   238                           
+   239                           ; 2 bytes @ 0x1
+   240  0071                     	ds	1
+   241  0072                     lock@j:
+   242  0072                     ___awmod@dividend:	
+   243                           ; 2 bytes @ 0x2
+   244                           
+   245                           
+   246                           ; 2 bytes @ 0x2
+   247  0072                     	ds	1
+   248  0073                     deploy@i:
+   249                           
+   250                           ; 2 bytes @ 0x3
+   251  0073                     	ds	1
+   252  0074                     ??___awmod:
+   253  0074                     lock@i:	
+   254                           ; 1 bytes @ 0x4
+   255                           
+   256                           
+   257                           ; 2 bytes @ 0x4
+   258  0074                     	ds	1
+   259  0075                     ___awmod@counter:
+   260                           
+   261                           ; 1 bytes @ 0x5
+   262  0075                     	ds	1
+   263  0076                     ??_gotoLockedState:
+   264  0076                     gotoLockedState@state:	
+   265                           ; 1 bytes @ 0x6
+   266                           
+   267  0076                     ___awmod@sign:	
+   268                           ; 1 bytes @ 0x6
+   269                           
+   270                           
+   271                           ; 1 bytes @ 0x6
+   272  0076                     	ds	1
+   273  0077                     ??_main:
+   274                           
+   275                           ; 1 bytes @ 0x7
+   276  0077                     	ds	3
+   277                           
+   278                           	psect	cstackBANK0
+   279  0020                     __pcstackBANK0:
+   280  0020                     main@buttonClicked:
+   281                           
+   282                           ; 2 bytes @ 0x0
+   283  0020                     	ds	2
+   284  0022                     main@buttonReleased:
+   285                           
+   286                           ; 2 bytes @ 0x2
+   287  0022                     	ds	2
+   288  0024                     main@launchDetected:
+   289                           
+   290                           ; 2 bytes @ 0x4
+   291  0024                     	ds	2
+   292  0026                     _main$122:
+   293                           
+   294                           ; 1 bytes @ 0x6
+   295  0026                     	ds	1
+   296  0027                     _main$124:
+   297                           
+   298                           ; 1 bytes @ 0x7
+   299  0027                     	ds	1
+   300  0028                     main@buttonPressedPeriod:
+   301                           
+   302                           ; 2 bytes @ 0x8
+   303  0028                     	ds	2
+   304  002A                     main@buttonClickedPendingEvent:
+   305                           
+   306                           ; 2 bytes @ 0xA
+   307  002A                     	ds	2
+   308  002C                     main@closeButton:
+   309                           
+   310                           ; 2 bytes @ 0xC
+   311  002C                     	ds	2
+   312  002E                     main@buttonWasPressed:
+   313                           
+   314                           ; 2 bytes @ 0xE
+   315  002E                     	ds	2
+   316  0030                     main@delay:
+   317                           
+   318                           ; 2 bytes @ 0x10
+   319  0030                     	ds	2
+   320  0032                     main@buttonClickedEvent:
+   321                           
+   322                           ; 2 bytes @ 0x12
+   323  0032                     	ds	2
+   324  0034                     main@buttonLongClickedEvent:
+   325                           
+   326                           ; 2 bytes @ 0x14
+   327  0034                     	ds	2
+   328  0036                     main@displayTime:
+   329                           
+   330                           ; 2 bytes @ 0x16
+   331  0036                     	ds	2
+   332  0038                     main@buttonPushed:
+   333                           
+   334                           ; 2 bytes @ 0x18
+   335  0038                     	ds	2
+   336  003A                     main@state:
+   337                           
+   338                           ; 1 bytes @ 0x1A
+   339  003A                     	ds	1
+   340                           
+   341                           	psect	maintext
+   342  0669                     __pmaintext:	
+   343 ;;
+   344 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   345 ;;
+   346 ;; *************** function _main *****************
+   347 ;; Defined at:
+   348 ;;		line 107 in file "main.c"
+   349 ;; Parameters:    Size  Location     Type
+   350 ;;		None
+   351 ;; Auto vars:     Size  Location     Type
+   352 ;;  closeButton     2   12[BANK0 ] int 
+   353 ;;  buttonReleas    2    2[BANK0 ] int 
+   354 ;;  buttonClicke    2    0[BANK0 ] int 
+   355 ;;  buttonPushed    2   24[BANK0 ] int 
+   356 ;;  displayTime     2   22[BANK0 ] int 
+   357 ;;  buttonLongCl    2   20[BANK0 ] int 
+   358 ;;  buttonClicke    2   18[BANK0 ] int 
+   359 ;;  delay           2   16[BANK0 ] int 
+   360 ;;  buttonWasPre    2   14[BANK0 ] int 
+   361 ;;  buttonClicke    2   10[BANK0 ] int 
+   362 ;;  buttonPresse    2    8[BANK0 ] int 
+   363 ;;  launchDetect    2    4[BANK0 ] int 
+   364 ;;  buttonPresse    2    0        int 
+   365 ;;  state           1   26[BANK0 ] enum E479
+   366 ;; Return value:  Size  Location     Type
+   367 ;;                  2   84[None  ] int 
+   368 ;; Registers used:
+   369 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   370 ;; Tracked objects:
+   371 ;;		On entry : B00/0
+   372 ;;		On exit  : 0/0
+   373 ;;		Unchanged: 0/0
+   374 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   375 ;;      Params:         0       0       0       0
+   376 ;;      Locals:         0      27       0       0
+   377 ;;      Temps:          3       0       0       0
+   378 ;;      Totals:         3      27       0       0
+   379 ;;Total ram usage:       30 bytes
+   380 ;; Hardware stack levels required when called: 2
+   381 ;; This function calls:
+   382 ;;		___awmod
+   383 ;;		_deploy
+   384 ;;		_gotoIdleState
+   385 ;;		_gotoLockedState
+   386 ;;		_notifyCommandAck
+   387 ;;		_notifyStateChanged
+   388 ;; This function is called by:
+   389 ;;		Startup code after reset
+   390 ;; This function uses a non-reentrant model
+   391 ;;
+   392                           
+   393                           
+   394                           ;psect for function _main
+   395  0669                     _main:
+   396  0669                     l1137:	
+   397                           ;incstack = 0
+   398                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   399                           
+   400                           
+   401                           ;main.c: 108:     enum State state = Idle;
+   402  0669  1283               	bcf	3,5	;RP0=0, select bank0
+   403  066A  1303               	bcf	3,6	;RP1=0, select bank0
+   404  066B  01BA               	clrf	main@state
+   405  066C                     l1139:
+   406                           
+   407                           ;main.c: 109:     CMCONbits.CM = 0b111;
+   408  066C  3007               	movlw	7
+   409  066D  049F               	iorwf	31,f	;volatile
+   410  066E                     l1141:
+   411                           
+   412                           ;main.c: 114:     CCP1M3 = 1;
+   413  066E  1597               	bsf	23,3	;volatile
+   414  066F                     l1143:
+   415                           
+   416                           ;main.c: 115:     CCP1M2 = 1;
+   417  066F  1517               	bsf	23,2	;volatile
+   418  0670                     l1145:
+   419                           
+   420                           ;main.c: 116:     PR2 = 249;
+   421  0670  30F9               	movlw	249
+   422  0671  1683               	bsf	3,5	;RP0=1, select bank1
+   423  0672  1303               	bcf	3,6	;RP1=0, select bank1
+   424  0673  0092               	movwf	18	;volatile
+   425  0674                     l1147:
+   426                           
+   427                           ;main.c: 117:     CCPR1L = 0;
+   428  0674  1283               	bcf	3,5	;RP0=0, select bank0
+   429  0675  1303               	bcf	3,6	;RP1=0, select bank0
+   430  0676  0195               	clrf	21	;volatile
+   431  0677                     l1149:
+   432                           
+   433                           ;main.c: 118:     CCP1X = 0;
+   434  0677  1297               	bcf	23,5	;volatile
+   435  0678                     l1151:
+   436                           
+   437                           ;main.c: 119:     CCP1Y = 0;
+   438  0678  1217               	bcf	23,4	;volatile
+   439  0679                     l1153:
+   440                           
+   441                           ;main.c: 121:     T2CKPS1 = 0;
+   442  0679  1092               	bcf	18,1	;volatile
+   443  067A                     l1155:
+   444                           
+   445                           ;main.c: 122:     T2CKPS0 = 0;
+   446  067A  1012               	bcf	18,0	;volatile
+   447  067B                     l1157:
+   448                           
+   449                           ;main.c: 123:     TMR2ON = 1;
+   450  067B  1512               	bsf	18,2	;volatile
+   451  067C                     l1159:
+   452                           
+   453                           ;main.c: 124:     TRISB3 = 0;
+   454  067C  1683               	bsf	3,5	;RP0=1, select bank1
+   455  067D  1303               	bcf	3,6	;RP1=0, select bank1
+   456  067E  1186               	bcf	6,3	;volatile
+   457  067F                     l1161:
+   458  067F                     l1163:
+   459                           
+   460                           ;main.c: 128:     nRBPU = 0;
+   461  067F  1381               	bcf	1,7	;volatile
+   462  0680                     l1165:
+   463                           
+   464                           ;main.c: 130:     TRISB0 = 0;
+   465  0680  1006               	bcf	6,0	;volatile
+   466  0681                     l1167:
+   467                           
+   468                           ;main.c: 131:     TRISB3 = 0;
+   469  0681  1186               	bcf	6,3	;volatile
+   470  0682                     l1169:
+   471                           
+   472                           ;main.c: 133:     TRISA1 = 0;
+   473  0682  1085               	bcf	5,1	;volatile
+   474  0683                     l1171:
+   475                           
+   476                           ;main.c: 134:     TRISA2 = 0;
+   477  0683  1105               	bcf	5,2	;volatile
+   478  0684                     l1173:
+   479                           
+   480                           ;main.c: 135:     TRISA3 = 0;
+   481  0684  1185               	bcf	5,3	;volatile
+   482  0685                     l1175:
+   483                           
+   484                           ;main.c: 137:     TRISB4 = 1;
+   485  0685  1606               	bsf	6,4	;volatile
+   486  0686                     l1177:
+   487                           
+   488                           ;main.c: 138:     TRISB1 = 1;
+   489  0686  1486               	bsf	6,1	;volatile
+   490  0687                     l1179:
+   491                           
+   492                           ;main.c: 140:     RA1=0;
+   493  0687  1283               	bcf	3,5	;RP0=0, select bank0
+   494  0688  1303               	bcf	3,6	;RP1=0, select bank0
+   495  0689  1085               	bcf	5,1	;volatile
+   496  068A                     l1181:
+   497                           
+   498                           ;main.c: 141:     RA2=0;
+   499  068A  1105               	bcf	5,2	;volatile
+   500  068B                     l1183:
+   501                           
+   502                           ;main.c: 142:     RA3=0;
+   503  068B  1185               	bcf	5,3	;volatile
+   504  068C                     l1185:
+   505  068C                     l1187:
+   506  068C                     l1189:
+   507                           
+   508                           ;main.c: 147:     int buttonPressedPeriod=0;
+   509  068C  01A8               	clrf	main@buttonPressedPeriod
+   510  068D  01A9               	clrf	main@buttonPressedPeriod+1
+   511  068E                     l1191:
+   512                           
+   513                           ;main.c: 148:     int buttonWasPressed = 0;
+   514  068E  01AE               	clrf	main@buttonWasPressed
+   515  068F  01AF               	clrf	main@buttonWasPressed+1
+   516  0690                     l1193:
+   517                           
+   518                           ;main.c: 150:     int buttonClickedPendingEvent = 0;
+   519  0690  01AA               	clrf	main@buttonClickedPendingEvent
+   520  0691  01AB               	clrf	main@buttonClickedPendingEvent+1
+   521  0692                     l1195:
+   522  0692                     l1197:
+   523  0692                     l1199:
+   524                           
+   525                           ;main.c: 155:     int delay = 2000;
+   526  0692  30D0               	movlw	208
+   527  0693  00B0               	movwf	main@delay
+   528  0694  3007               	movlw	7
+   529  0695  00B1               	movwf	main@delay+1
+   530  0696                     l1201:
+   531                           
+   532                           ;main.c: 156:     int displayTime=0;
+   533  0696  01B6               	clrf	main@displayTime
+   534  0697  01B7               	clrf	main@displayTime+1
+   535  0698                     l85:	
+   536                           ;main.c: 158:     while (1) {
+   537                           
+   538                           
+   539                           ;main.c: 159:         buttonPushed = !RB4;
+   540  0698  1003               	clrc
+   541  0699  1283               	bcf	3,5	;RP0=0, select bank0
+   542  069A  1303               	bcf	3,6	;RP1=0, select bank0
+   543  069B  1E06               	btfss	6,4	;volatile
+   544  069C  1403               	setc
+   545  069D  3000               	movlw	0
+   546  069E  1803               	skipnc
+   547  069F  3001               	movlw	1
+   548  06A0  00F7               	movwf	??_main
+   549  06A1  01F8               	clrf	??_main+1
+   550  06A2  0877               	movf	??_main,w
+   551  06A3  00B8               	movwf	main@buttonPushed
+   552  06A4  0878               	movf	??_main+1,w
+   553  06A5  00B9               	movwf	main@buttonPushed+1
+   554  06A6                     l1203:
+   555                           
+   556                           ;main.c: 161:         int buttonClicked = !buttonWasPressed && buttonPushed;
+   557  06A6  01A6               	clrf	_main$122
+   558  06A7  082E               	movf	main@buttonWasPressed,w
+   559  06A8  042F               	iorwf	main@buttonWasPressed+1,w
+   560  06A9  1D03               	btfss	3,2
+   561  06AA  2EAC               	goto	u451
+   562  06AB  2EAD               	goto	u450
+   563  06AC                     u451:
+   564  06AC  2EB5               	goto	l1209
+   565  06AD                     u450:
+   566  06AD                     l1205:
+   567  06AD  0838               	movf	main@buttonPushed,w
+   568  06AE  0439               	iorwf	main@buttonPushed+1,w
+   569  06AF  1903               	btfsc	3,2
+   570  06B0  2EB2               	goto	u461
+   571  06B1  2EB3               	goto	u460
+   572  06B2                     u461:
+   573  06B2  2EB5               	goto	l1209
+   574  06B3                     u460:
+   575  06B3                     l1207:
+   576  06B3  01A6               	clrf	_main$122
+   577  06B4  0AA6               	incf	_main$122,f
+   578  06B5                     l1209:
+   579  06B5  0826               	movf	_main$122,w
+   580  06B6  00F7               	movwf	??_main
+   581  06B7  01F8               	clrf	??_main+1
+   582  06B8  0877               	movf	??_main,w
+   583  06B9  00A0               	movwf	main@buttonClicked
+   584  06BA  0878               	movf	??_main+1,w
+   585  06BB  00A1               	movwf	main@buttonClicked+1
+   586  06BC                     l1211:
+   587                           
+   588                           ;main.c: 162:         int buttonReleased = buttonWasPressed && !buttonPushed;
+   589  06BC  01A7               	clrf	_main$124
+   590  06BD                     l1213:
+   591  06BD  082E               	movf	main@buttonWasPressed,w
+   592  06BE  042F               	iorwf	main@buttonWasPressed+1,w
+   593  06BF  1903               	btfsc	3,2
+   594  06C0  2EC2               	goto	u471
+   595  06C1  2EC3               	goto	u470
+   596  06C2                     u471:
+   597  06C2  2ECB               	goto	l1219
+   598  06C3                     u470:
+   599  06C3                     l1215:
+   600  06C3  0838               	movf	main@buttonPushed,w
+   601  06C4  0439               	iorwf	main@buttonPushed+1,w
+   602  06C5  1D03               	btfss	3,2
+   603  06C6  2EC8               	goto	u481
+   604  06C7  2EC9               	goto	u480
+   605  06C8                     u481:
+   606  06C8  2ECB               	goto	l1219
+   607  06C9                     u480:
+   608  06C9                     l1217:
+   609  06C9  01A7               	clrf	_main$124
+   610  06CA  0AA7               	incf	_main$124,f
+   611  06CB                     l1219:
+   612  06CB  0827               	movf	_main$124,w
+   613  06CC  00F7               	movwf	??_main
+   614  06CD  01F8               	clrf	??_main+1
+   615  06CE  0877               	movf	??_main,w
+   616  06CF  00A2               	movwf	main@buttonReleased
+   617  06D0  0878               	movf	??_main+1,w
+   618  06D1  00A3               	movwf	main@buttonReleased+1
+   619  06D2                     l1221:
+   620                           
+   621                           ;main.c: 163:         buttonClickedEvent = 0;
+   622  06D2  01B2               	clrf	main@buttonClickedEvent
+   623  06D3  01B3               	clrf	main@buttonClickedEvent+1
+   624  06D4                     l1223:
+   625                           
+   626                           ;main.c: 164:         buttonLongClickedEvent =0;
+   627  06D4  01B4               	clrf	main@buttonLongClickedEvent
+   628  06D5  01B5               	clrf	main@buttonLongClickedEvent+1
+   629  06D6                     l1225:
+   630                           
+   631                           ;main.c: 166:         if (buttonClicked) {
+   632  06D6  0820               	movf	main@buttonClicked,w
+   633  06D7  0421               	iorwf	main@buttonClicked+1,w
+   634  06D8  1903               	btfsc	3,2
+   635  06D9  2EDB               	goto	u491
+   636  06DA  2EDC               	goto	u490
+   637  06DB                     u491:
+   638  06DB  2EE3               	goto	l1231
+   639  06DC                     u490:
+   640  06DC                     l1227:
+   641                           
+   642                           ;main.c: 167:             buttonPressedPeriod=0;
+   643  06DC  01A8               	clrf	main@buttonPressedPeriod
+   644  06DD  01A9               	clrf	main@buttonPressedPeriod+1
+   645  06DE                     l1229:
+   646                           
+   647                           ;main.c: 168:             buttonClickedPendingEvent=1;
+   648  06DE  3001               	movlw	1
+   649  06DF  00AA               	movwf	main@buttonClickedPendingEvent
+   650  06E0  3000               	movlw	0
+   651  06E1  00AB               	movwf	main@buttonClickedPendingEvent+1
+   652                           
+   653                           ;main.c: 169:         }
+   654  06E2  2F19               	goto	l91
+   655  06E3                     l1231:
+   656  06E3  0822               	movf	main@buttonReleased,w
+   657  06E4  0423               	iorwf	main@buttonReleased+1,w
+   658  06E5  1903               	btfsc	3,2
+   659  06E6  2EE8               	goto	u501
+   660  06E7  2EE9               	goto	u500
+   661  06E8                     u501:
+   662  06E8  2EF6               	goto	l1239
+   663  06E9                     u500:
+   664  06E9                     l1233:
+   665                           
+   666                           ;main.c: 171:             if (buttonClickedPendingEvent) {
+   667  06E9  082A               	movf	main@buttonClickedPendingEvent,w
+   668  06EA  042B               	iorwf	main@buttonClickedPendingEvent+1,w
+   669  06EB  1903               	btfsc	3,2
+   670  06EC  2EEE               	goto	u511
+   671  06ED  2EEF               	goto	u510
+   672  06EE                     u511:
+   673  06EE  2F19               	goto	l91
+   674  06EF                     u510:
+   675  06EF                     l1235:
+   676                           
+   677                           ;main.c: 172:                 buttonClickedEvent = 1;
+   678  06EF  3001               	movlw	1
+   679  06F0  00B2               	movwf	main@buttonClickedEvent
+   680  06F1  3000               	movlw	0
+   681  06F2  00B3               	movwf	main@buttonClickedEvent+1
+   682  06F3                     l1237:
+   683                           
+   684                           ;main.c: 173:                 buttonClickedPendingEvent=0;
+   685  06F3  01AA               	clrf	main@buttonClickedPendingEvent
+   686  06F4  01AB               	clrf	main@buttonClickedPendingEvent+1
+   687  06F5  2F19               	goto	l91
+   688  06F6                     l1239:
+   689  06F6  0838               	movf	main@buttonPushed,w
+   690  06F7  0439               	iorwf	main@buttonPushed+1,w
+   691  06F8  1903               	btfsc	3,2
+   692  06F9  2EFB               	goto	u521
+   693  06FA  2EFC               	goto	u520
+   694  06FB                     u521:
+   695  06FB  2F19               	goto	l91
+   696  06FC                     u520:
+   697  06FC                     l1241:
+   698                           
+   699                           ;main.c: 177:             ++buttonPressedPeriod;
+   700  06FC  3001               	movlw	1
+   701  06FD  07A8               	addwf	main@buttonPressedPeriod,f
+   702  06FE  1803               	skipnc
+   703  06FF  0AA9               	incf	main@buttonPressedPeriod+1,f
+   704  0700  3000               	movlw	0
+   705  0701  07A9               	addwf	main@buttonPressedPeriod+1,f
+   706  0702                     l1243:
+   707                           
+   708                           ;main.c: 178:             if (buttonPressedPeriod > 50) {
+   709  0702  0829               	movf	main@buttonPressedPeriod+1,w
+   710  0703  3A80               	xorlw	128
+   711  0704  00FF               	movwf	btemp+1
+   712  0705  3080               	movlw	128
+   713  0706  027F               	subwf	btemp+1,w
+   714  0707  1D03               	skipz
+   715  0708  2F0B               	goto	u535
+   716  0709  3033               	movlw	51
+   717  070A  0228               	subwf	main@buttonPressedPeriod,w
+   718  070B                     u535:
+   719  070B  1C03               	skipc
+   720  070C  2F0E               	goto	u531
+   721  070D  2F0F               	goto	u530
+   722  070E                     u531:
+   723  070E  2F19               	goto	l91
+   724  070F                     u530:
+   725  070F                     l1245:
+   726                           
+   727                           ;main.c: 179:                 buttonLongClickedEvent = 1;
+   728  070F  3001               	movlw	1
+   729  0710  1283               	bcf	3,5	;RP0=0, select bank0
+   730  0711  1303               	bcf	3,6	;RP1=0, select bank0
+   731  0712  00B4               	movwf	main@buttonLongClickedEvent
+   732  0713  3000               	movlw	0
+   733  0714  00B5               	movwf	main@buttonLongClickedEvent+1
+   734  0715                     l1247:
+   735                           
+   736                           ;main.c: 180:                 buttonClickedPendingEvent=0;
+   737  0715  01AA               	clrf	main@buttonClickedPendingEvent
+   738  0716  01AB               	clrf	main@buttonClickedPendingEvent+1
+   739  0717                     l1249:
+   740                           
+   741                           ;main.c: 181:                 buttonPressedPeriod=0;
+   742  0717  01A8               	clrf	main@buttonPressedPeriod
+   743  0718  01A9               	clrf	main@buttonPressedPeriod+1
+   744  0719                     l91:
+   745                           
+   746                           ;main.c: 184:         buttonWasPressed = buttonPushed;
+   747  0719  1283               	bcf	3,5	;RP0=0, select bank0
+   748  071A  1303               	bcf	3,6	;RP1=0, select bank0
+   749  071B  0839               	movf	main@buttonPushed+1,w
+   750  071C  00AF               	movwf	main@buttonWasPressed+1
+   751  071D  0838               	movf	main@buttonPushed,w
+   752  071E  00AE               	movwf	main@buttonWasPressed
+   753  071F                     l1251:
+   754                           
+   755                           ;main.c: 185:         if (state != Armed) {
+   756  071F  3002               	movlw	2
+   757  0720  063A               	xorwf	main@state,w
+   758  0721  1903               	btfsc	3,2
+   759  0722  2F24               	goto	u541
+   760  0723  2F25               	goto	u540
+   761  0724                     u541:
+   762  0724  2F2E               	goto	l97
+   763  0725                     u540:
+   764  0725                     l1253:
+   765                           
+   766                           ;main.c: 186:             _delay((unsigned long)((20)*(4000000/4000.0)));
+   767  0725  301A               	movlw	26
+   768  0726  00F8               	movwf	??_main+1
+   769  0727  30F8               	movlw	248
+   770  0728  00F7               	movwf	??_main
+   771  0729                     u637:
+   772  0729  0BF7               	decfsz	??_main,f
+   773  072A  2F29               	goto	u637
+   774  072B  0BF8               	decfsz	??_main+1,f
+   775  072C  2F29               	goto	u637
+   776  072D  0000               	nop
+   777  072E                     l97:	
+   778                           ;main.c: 187:         }
+   779                           
+   780                           
+   781                           ;main.c: 189:         int closeButton = buttonClickedEvent;
+   782  072E  1283               	bcf	3,5	;RP0=0, select bank0
+   783  072F  1303               	bcf	3,6	;RP1=0, select bank0
+   784  0730  0833               	movf	main@buttonClickedEvent+1,w
+   785  0731  00AD               	movwf	main@closeButton+1
+   786  0732  0832               	movf	main@buttonClickedEvent,w
+   787  0733  00AC               	movwf	main@closeButton
+   788  0734                     l1255:
+   789                           
+   790                           ;main.c: 191:         launchDetected = !RB1;
+   791  0734  1003               	clrc
+   792  0735  1C86               	btfss	6,1	;volatile
+   793  0736  1403               	setc
+   794  0737  3000               	movlw	0
+   795  0738  1803               	skipnc
+   796  0739  3001               	movlw	1
+   797  073A  00F7               	movwf	??_main
+   798  073B  01F8               	clrf	??_main+1
+   799  073C  0877               	movf	??_main,w
+   800  073D  00A4               	movwf	main@launchDetected
+   801  073E  0878               	movf	??_main+1,w
+   802  073F  00A5               	movwf	main@launchDetected+1
+   803                           
+   804                           ;main.c: 192:         switch (state) {
+   805  0740  2FE6               	goto	l1311
+   806  0741                     l1257:
+   807                           
+   808                           ;main.c: 194:                 if (closeButton) {
+   809  0741  082C               	movf	main@closeButton,w
+   810  0742  042D               	iorwf	main@closeButton+1,w
+   811  0743  1903               	btfsc	3,2
+   812  0744  2F46               	goto	u551
+   813  0745  2F47               	goto	u550
+   814  0746                     u551:
+   815  0746  2F4A               	goto	l1261
+   816  0747                     u550:
+   817  0747                     l1259:
+   818                           
+   819                           ;main.c: 195:                     gotoLockedState(&state);
+   820  0747  303A               	movlw	(low (main@state| 0))& (0+255)
+   821  0748  253F               	fcall	_gotoLockedState
+   822                           
+   823                           ;main.c: 196:                 }
+   824  0749  2E98               	goto	l85
+   825  074A                     l1261:
+   826  074A  0834               	movf	main@buttonLongClickedEvent,w
+   827  074B  0435               	iorwf	main@buttonLongClickedEvent+1,w
+   828  074C  1903               	btfsc	3,2
+   829  074D  2F4F               	goto	u561
+   830  074E  2F50               	goto	u560
+   831  074F                     u561:
+   832  074F  2FFC               	goto	l103
+   833  0750                     u560:
+   834  0750                     l1263:
+   835                           
+   836                           ;main.c: 198:                     RA3=1;
+   837  0750  1585               	bsf	5,3	;volatile
+   838  0751                     l1265:
+   839                           
+   840                           ;main.c: 199:                     state = ProgramSeconds;
+   841  0751  3003               	movlw	3
+   842  0752  00F7               	movwf	??_main
+   843  0753  0877               	movf	??_main,w
+   844  0754  00BA               	movwf	main@state
+   845  0755  2E96               	goto	l1201
+   846  0756                     l1269:
+   847                           
+   848                           ;main.c: 205:                 if (closeButton) {
+   849  0756  082C               	movf	main@closeButton,w
+   850  0757  042D               	iorwf	main@closeButton+1,w
+   851  0758  1903               	btfsc	3,2
+   852  0759  2F5B               	goto	u571
+   853  075A  2F5C               	goto	u570
+   854  075B                     u571:
+   855  075B  2E98               	goto	l85
+   856  075C                     u570:
+   857  075C                     l1271:
+   858                           
+   859                           ;main.c: 206:                     notifyCommandAck();
+   860  075C  254C               	fcall	_notifyCommandAck
+   861  075D                     l1273:
+   862                           
+   863                           ;main.c: 207:                     state = Armed;
+   864  075D  3002               	movlw	2
+   865  075E  00F7               	movwf	??_main
+   866  075F  0877               	movf	??_main,w
+   867  0760  1283               	bcf	3,5	;RP0=0, select bank0
+   868  0761  1303               	bcf	3,6	;RP1=0, select bank0
+   869  0762  00BA               	movwf	main@state
+   870  0763                     l1275:
+   871                           
+   872                           ;main.c: 208:                     RA2 = 1;
+   873  0763  1505               	bsf	5,2	;volatile
+   874  0764                     l1277:
+   875                           
+   876                           ;main.c: 209:                     notifyStateChanged();
+   877  0764  2562               	fcall	_notifyStateChanged
+   878  0765  2E98               	goto	l85
+   879  0766                     l1279:
+   880                           
+   881                           ;main.c: 214:                 if (launchDetected) {
+   882  0766  0824               	movf	main@launchDetected,w
+   883  0767  0425               	iorwf	main@launchDetected+1,w
+   884  0768  1903               	btfsc	3,2
+   885  0769  2F6B               	goto	u581
+   886  076A  2F6C               	goto	u580
+   887  076B                     u581:
+   888  076B  2E98               	goto	l85
+   889  076C                     u580:
+   890  076C                     l1281:
+   891                           
+   892                           ;main.c: 215:                     RA3=1;
+   893  076C  1585               	bsf	5,3	;volatile
+   894  076D                     l1283:
+   895                           
+   896                           ;main.c: 216:                     _delay((unsigned long)((2600)*(4000000/4000.0)));
+   897  076D  300E               	movlw	14
+   898  076E  00F9               	movwf	??_main+2
+   899  076F  3031               	movlw	49
+   900  0770  00F8               	movwf	??_main+1
+   901  0771  3094               	movlw	148
+   902  0772  00F7               	movwf	??_main
+   903  0773                     u647:
+   904  0773  0BF7               	decfsz	??_main,f
+   905  0774  2F73               	goto	u647
+   906  0775  0BF8               	decfsz	??_main+1,f
+   907  0776  2F73               	goto	u647
+   908  0777  0BF9               	decfsz	??_main+2,f
+   909  0778  2F73               	goto	u647
+   910  0779  0000               	nop
+   911  077A                     l1285:
+   912                           
+   913                           ;main.c: 217:                     deploy();
+   914  077A  2583               	fcall	_deploy
+   915  077B                     l1287:
+   916                           
+   917                           ;main.c: 218:                     gotoIdleState(&state);
+   918  077B  303A               	movlw	(low (main@state| 0))& (0+255)
+   919  077C  2534               	fcall	_gotoIdleState
+   920  077D  2E98               	goto	l85
+   921  077E                     l1289:
+   922                           
+   923                           ;main.c: 223:                 if (buttonLongClickedEvent) {
+   924  077E  0834               	movf	main@buttonLongClickedEvent,w
+   925  077F  0435               	iorwf	main@buttonLongClickedEvent+1,w
+   926  0780  1903               	btfsc	3,2
+   927  0781  2F83               	goto	u591
+   928  0782  2F84               	goto	u590
+   929  0783                     u591:
+   930  0783  2F86               	goto	l1293
+   931  0784                     u590:
+   932  0784                     l1291:
+   933                           
+   934                           ;main.c: 224:                     gotoIdleState(&state);
+   935  0784  303A               	movlw	(low (main@state| 0))& (0+255)
+   936  0785  2534               	fcall	_gotoIdleState
+   937  0786                     l1293:
+   938                           
+   939                           ;main.c: 226:                 if (buttonClickedEvent) {
+   940  0786  1283               	bcf	3,5	;RP0=0, select bank0
+   941  0787  1303               	bcf	3,6	;RP1=0, select bank0
+   942  0788  0832               	movf	main@buttonClickedEvent,w
+   943  0789  0433               	iorwf	main@buttonClickedEvent+1,w
+   944  078A  1903               	btfsc	3,2
+   945  078B  2F8D               	goto	u601
+   946  078C  2F8E               	goto	u600
+   947  078D                     u601:
+   948  078D  2FA3               	goto	l1299
+   949  078E                     u600:
+   950  078E                     l1295:
+   951                           
+   952                           ;main.c: 227:                     delay = (delay + 1000) % 6000;
+   953  078E  3070               	movlw	112
+   954  078F  00F0               	movwf	___awmod@divisor
+   955  0790  3017               	movlw	23
+   956  0791  00F1               	movwf	___awmod@divisor+1
+   957  0792  0830               	movf	main@delay,w
+   958  0793  3EE8               	addlw	232
+   959  0794  00F2               	movwf	___awmod@dividend
+   960  0795  0831               	movf	main@delay+1,w
+   961  0796  1803               	skipnc
+   962  0797  3E01               	addlw	1
+   963  0798  3E03               	addlw	3
+   964  0799  00F3               	movwf	___awmod@dividend+1
+   965  079A  2610               	fcall	___awmod
+   966  079B  0871               	movf	?___awmod+1,w
+   967  079C  1283               	bcf	3,5	;RP0=0, select bank0
+   968  079D  1303               	bcf	3,6	;RP1=0, select bank0
+   969  079E  00B1               	movwf	main@delay+1
+   970  079F  0870               	movf	?___awmod,w
+   971  07A0  00B0               	movwf	main@delay
+   972  07A1                     l1297:
+   973                           
+   974                           ;main.c: 228:                     displayTime = 0;
+   975  07A1  01B6               	clrf	main@displayTime
+   976  07A2  01B7               	clrf	main@displayTime+1
+   977  07A3                     l1299:
+   978                           
+   979                           ;main.c: 230:                 displayTime += 20;
+   980  07A3  3014               	movlw	20
+   981  07A4  07B6               	addwf	main@displayTime,f
+   982  07A5  1803               	skipnc
+   983  07A6  0AB7               	incf	main@displayTime+1,f
+   984  07A7  3000               	movlw	0
+   985  07A8  07B7               	addwf	main@displayTime+1,f
+   986  07A9                     l1301:
+   987                           
+   988                           ;main.c: 231:                 if (displayTime % 1000 < 750 )
+   989  07A9  30E8               	movlw	232
+   990  07AA  00F0               	movwf	___awmod@divisor
+   991  07AB  3003               	movlw	3
+   992  07AC  00F1               	movwf	___awmod@divisor+1
+   993  07AD  0837               	movf	main@displayTime+1,w
+   994  07AE  00F3               	movwf	___awmod@dividend+1
+   995  07AF  0836               	movf	main@displayTime,w
+   996  07B0  00F2               	movwf	___awmod@dividend
+   997  07B1  2610               	fcall	___awmod
+   998  07B2  0871               	movf	?___awmod+1,w
+   999  07B3  3A80               	xorlw	128
+  1000  07B4  00FF               	movwf	btemp+1
+  1001  07B5  3082               	movlw	130
+  1002  07B6  027F               	subwf	btemp+1,w
+  1003  07B7  1D03               	skipz
+  1004  07B8  2FBB               	goto	u615
+  1005  07B9  30EE               	movlw	238
+  1006  07BA  0270               	subwf	?___awmod,w
+  1007  07BB                     u615:
+  1008  07BB  1803               	skipnc
+  1009  07BC  2FBE               	goto	u611
+  1010  07BD  2FBF               	goto	u610
+  1011  07BE                     u611:
+  1012  07BE  2FD3               	goto	l112
+  1013  07BF                     u610:
+  1014  07BF                     l1303:
+  1015                           
+  1016                           ;main.c: 232:                 {;main.c: 233:                     if (displayTime < delay
+      +                          ) {
+  1017  07BF  1283               	bcf	3,5	;RP0=0, select bank0
+  1018  07C0  1303               	bcf	3,6	;RP1=0, select bank0
+  1019  07C1  0837               	movf	main@displayTime+1,w
+  1020  07C2  3A80               	xorlw	128
+  1021  07C3  00F7               	movwf	??_main
+  1022  07C4  0831               	movf	main@delay+1,w
+  1023  07C5  3A80               	xorlw	128
+  1024  07C6  0277               	subwf	??_main,w
+  1025  07C7  1D03               	skipz
+  1026  07C8  2FCB               	goto	u625
+  1027  07C9  0830               	movf	main@delay,w
+  1028  07CA  0236               	subwf	main@displayTime,w
+  1029  07CB                     u625:
+  1030  07CB  1803               	skipnc
+  1031  07CC  2FCE               	goto	u621
+  1032  07CD  2FCF               	goto	u620
+  1033  07CE                     u621:
+  1034  07CE  2FD3               	goto	l112
+  1035  07CF                     u620:
+  1036  07CF                     l1305:
+  1037                           
+  1038                           ;main.c: 234:                         RA1 = 1;
+  1039  07CF  1283               	bcf	3,5	;RP0=0, select bank0
+  1040  07D0  1303               	bcf	3,6	;RP1=0, select bank0
+  1041  07D1  1485               	bsf	5,1	;volatile
+  1042                           
+  1043                           ;main.c: 235:                     }
+  1044  07D2  2FD6               	goto	l1307
+  1045  07D3                     l112:	
+  1046                           ;main.c: 236:                     else {
+  1047                           
+  1048                           
+  1049                           ;main.c: 237:                         RA1 = 0;
+  1050  07D3  1283               	bcf	3,5	;RP0=0, select bank0
+  1051  07D4  1303               	bcf	3,6	;RP1=0, select bank0
+  1052  07D5  1085               	bcf	5,1	;volatile
+  1053  07D6                     l1307:
+  1054                           
+  1055                           ;main.c: 243:                 displayTime = displayTime % 6000;
+  1056  07D6  3070               	movlw	112
+  1057  07D7  00F0               	movwf	___awmod@divisor
+  1058  07D8  3017               	movlw	23
+  1059  07D9  00F1               	movwf	___awmod@divisor+1
+  1060  07DA  0837               	movf	main@displayTime+1,w
+  1061  07DB  00F3               	movwf	___awmod@dividend+1
+  1062  07DC  0836               	movf	main@displayTime,w
+  1063  07DD  00F2               	movwf	___awmod@dividend
+  1064  07DE  2610               	fcall	___awmod
+  1065  07DF  0871               	movf	?___awmod+1,w
+  1066  07E0  1283               	bcf	3,5	;RP0=0, select bank0
+  1067  07E1  1303               	bcf	3,6	;RP1=0, select bank0
+  1068  07E2  00B7               	movwf	main@displayTime+1
+  1069  07E3  0870               	movf	?___awmod,w
+  1070  07E4  00B6               	movwf	main@displayTime
+  1071                           
+  1072                           ;main.c: 244:                 break;
+  1073  07E5  2E98               	goto	l85
+  1074  07E6                     l1311:
+  1075  07E6  083A               	movf	main@state,w
+  1076  07E7  00F7               	movwf	??_main
+  1077  07E8  01F8               	clrf	??_main+1
+  1078                           
+  1079                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1080                           ; Switch size 1, requested type "simple"
+  1081                           ; Number of cases is 1, Range of values is 0 to 0
+  1082                           ; switch strategies available:
+  1083                           ; Name         Instructions Cycles
+  1084                           ; simple_byte            4     3 (average)
+  1085                           ; direct_byte            7     6 (fixed)
+  1086                           ; jumptable            260     6 (fixed)
+  1087                           ;	Chosen strategy is simple_byte
+  1088  07E9  0878               	movf	??_main+1,w
+  1089  07EA  3A00               	xorlw	0	; case 0
+  1090  07EB  1903               	skipnz
+  1091  07EC  2FEE               	goto	l1349
+  1092  07ED  2E98               	goto	l85
+  1093  07EE                     l1349:
+  1094                           
+  1095                           ; Switch size 1, requested type "simple"
+  1096                           ; Number of cases is 4, Range of values is 0 to 3
+  1097                           ; switch strategies available:
+  1098                           ; Name         Instructions Cycles
+  1099                           ; direct_byte           10     6 (fixed)
+  1100                           ; simple_byte           13     7 (average)
+  1101                           ; jumptable            260     6 (fixed)
+  1102                           ;	Chosen strategy is simple_byte
+  1103  07EE  0877               	movf	??_main,w
+  1104  07EF  3A00               	xorlw	0	; case 0
+  1105  07F0  1903               	skipnz
+  1106  07F1  2F41               	goto	l1257
+  1107  07F2  3A01               	xorlw	1	; case 1
+  1108  07F3  1903               	skipnz
+  1109  07F4  2F56               	goto	l1269
+  1110  07F5  3A03               	xorlw	3	; case 2
+  1111  07F6  1903               	skipnz
+  1112  07F7  2F66               	goto	l1279
+  1113  07F8  3A01               	xorlw	1	; case 3
+  1114  07F9  1903               	skipnz
+  1115  07FA  2F7E               	goto	l1289
+  1116  07FB  2E98               	goto	l85
+  1117  07FC                     l103:
+  1118  07FC  2E98               	goto	l85
+  1119  07FD  2800               	ljmp	start
+  1120  07FE                     __end_of_main:
+  1121                           
+  1122                           	psect	text1
+  1123  053F                     __ptext1:	
+  1124 ;; *************** function _gotoLockedState *****************
+  1125 ;; Defined at:
+  1126 ;;		line 99 in file "main.c"
+  1127 ;; Parameters:    Size  Location     Type
+  1128 ;;  state           1    wreg     PTR enum E479
+  1129 ;;		 -> main@state(1), 
+  1130 ;; Auto vars:     Size  Location     Type
+  1131 ;;  state           1    6[COMMON] PTR enum E479
+  1132 ;;		 -> main@state(1), 
+  1133 ;; Return value:  Size  Location     Type
+  1134 ;;                  1    wreg      void 
+  1135 ;; Registers used:
+  1136 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1137 ;; Tracked objects:
+  1138 ;;		On entry : 0/0
+  1139 ;;		On exit  : 0/0
+  1140 ;;		Unchanged: 0/0
+  1141 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1142 ;;      Params:         0       0       0       0
+  1143 ;;      Locals:         1       0       0       0
+  1144 ;;      Temps:          0       0       0       0
+  1145 ;;      Totals:         1       0       0       0
+  1146 ;;Total ram usage:        1 bytes
+  1147 ;; Hardware stack levels used: 1
+  1148 ;; Hardware stack levels required when called: 1
+  1149 ;; This function calls:
+  1150 ;;		_lock
+  1151 ;;		_notifyCommandAck
+  1152 ;;		_notifyStateChanged
+  1153 ;; This function is called by:
+  1154 ;;		_main
+  1155 ;; This function uses a non-reentrant model
+  1156 ;;
+  1157                           
+  1158                           
+  1159                           ;psect for function _gotoLockedState
+  1160  053F                     _gotoLockedState:
+  1161                           
+  1162                           ;incstack = 0
+  1163                           ; Regs used in _gotoLockedState: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1164                           ;gotoLockedState@state stored from wreg
+  1165  053F  00F6               	movwf	gotoLockedState@state
+  1166  0540                     l1089:
+  1167                           
+  1168                           ;main.c: 100:     notifyCommandAck();
+  1169  0540  254C               	fcall	_notifyCommandAck
+  1170  0541                     l1091:
+  1171                           
+  1172                           ;main.c: 101:     lock();
+  1173  0541  25C9               	fcall	_lock
+  1174  0542                     l1093:
+  1175                           
+  1176                           ;main.c: 102:     *state = Closed;
+  1177  0542  0876               	movf	gotoLockedState@state,w
+  1178  0543  0084               	movwf	4
+  1179  0544  1383               	bcf	3,7	;select IRP bank0
+  1180  0545  0180               	clrf	0
+  1181  0546  0A80               	incf	0,f
+  1182  0547                     l1095:
+  1183                           
+  1184                           ;main.c: 103:     RA1 = 1;
+  1185  0547  1283               	bcf	3,5	;RP0=0, select bank0
+  1186  0548  1303               	bcf	3,6	;RP1=0, select bank0
+  1187  0549  1485               	bsf	5,1	;volatile
+  1188  054A                     l1097:
+  1189                           
+  1190                           ;main.c: 104:     notifyStateChanged();
+  1191  054A  2562               	fcall	_notifyStateChanged
+  1192  054B                     l80:
+  1193  054B  0008               	return
+  1194  054C                     __end_of_gotoLockedState:
+  1195                           
+  1196                           	psect	text2
+  1197  0562                     __ptext2:	
+  1198 ;; *************** function _notifyStateChanged *****************
+  1199 ;; Defined at:
+  1200 ;;		line 78 in file "main.c"
+  1201 ;; Parameters:    Size  Location     Type
+  1202 ;;		None
+  1203 ;; Auto vars:     Size  Location     Type
+  1204 ;;		None
+  1205 ;; Return value:  Size  Location     Type
+  1206 ;;                  1    wreg      void 
+  1207 ;; Registers used:
+  1208 ;;		wreg
+  1209 ;; Tracked objects:
+  1210 ;;		On entry : 0/0
+  1211 ;;		On exit  : 0/0
+  1212 ;;		Unchanged: 0/0
+  1213 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1214 ;;      Params:         0       0       0       0
+  1215 ;;      Locals:         0       0       0       0
+  1216 ;;      Temps:          3       0       0       0
+  1217 ;;      Totals:         3       0       0       0
+  1218 ;;Total ram usage:        3 bytes
+  1219 ;; Hardware stack levels used: 1
+  1220 ;; This function calls:
+  1221 ;;		Nothing
+  1222 ;; This function is called by:
+  1223 ;;		_gotoLockedState
+  1224 ;;		_main
+  1225 ;; This function uses a non-reentrant model
+  1226 ;;
+  1227                           
+  1228                           
+  1229                           ;psect for function _notifyStateChanged
+  1230  0562                     _notifyStateChanged:
+  1231  0562                     l1057:	
+  1232                           ;incstack = 0
+  1233                           ; Regs used in _notifyStateChanged: [wreg]
+  1234                           
+  1235                           
+  1236                           ;main.c: 79:     _delay((unsigned long)((500)*(4000000/4000.0)));
+  1237  0562  3003               	movlw	3
+  1238  0563  00F2               	movwf	??_notifyStateChanged+2
+  1239  0564  308A               	movlw	138
+  1240  0565  00F1               	movwf	??_notifyStateChanged+1
+  1241  0566  3055               	movlw	85
+  1242  0567  00F0               	movwf	??_notifyStateChanged
+  1243  0568                     u657:
+  1244  0568  0BF0               	decfsz	??_notifyStateChanged,f
+  1245  0569  2D68               	goto	u657
+  1246  056A  0BF1               	decfsz	??_notifyStateChanged+1,f
+  1247  056B  2D68               	goto	u657
+  1248  056C  0BF2               	decfsz	??_notifyStateChanged+2,f
+  1249  056D  2D68               	goto	u657
+  1250  056E  2D6F               	nop2
+  1251  056F                     l1059:
+  1252                           
+  1253                           ;main.c: 80:     TMR2ON = 1;
+  1254  056F  1283               	bcf	3,5	;RP0=0, select bank0
+  1255  0570  1303               	bcf	3,6	;RP1=0, select bank0
+  1256  0571  1512               	bsf	18,2	;volatile
+  1257                           
+  1258                           ;main.c: 81:     _delay((unsigned long)((250)*(4000000/4000.0)));
+  1259  0572  3002               	movlw	2
+  1260  0573  00F2               	movwf	??_notifyStateChanged+2
+  1261  0574  3045               	movlw	69
+  1262  0575  00F1               	movwf	??_notifyStateChanged+1
+  1263  0576  30A9               	movlw	169
+  1264  0577  00F0               	movwf	??_notifyStateChanged
+  1265  0578                     u667:
+  1266  0578  0BF0               	decfsz	??_notifyStateChanged,f
+  1267  0579  2D78               	goto	u667
+  1268  057A  0BF1               	decfsz	??_notifyStateChanged+1,f
+  1269  057B  2D78               	goto	u667
+  1270  057C  0BF2               	decfsz	??_notifyStateChanged+2,f
+  1271  057D  2D78               	goto	u667
+  1272  057E  2D7F               	nop2
+  1273  057F                     l1061:
+  1274                           
+  1275                           ;main.c: 82:     TMR2ON = 0;
+  1276  057F  1283               	bcf	3,5	;RP0=0, select bank0
+  1277  0580  1303               	bcf	3,6	;RP1=0, select bank0
+  1278  0581  1112               	bcf	18,2	;volatile
+  1279  0582                     l74:
+  1280  0582  0008               	return
+  1281  0583                     __end_of_notifyStateChanged:
+  1282                           
+  1283                           	psect	text3
+  1284  054C                     __ptext3:	
+  1285 ;; *************** function _notifyCommandAck *****************
+  1286 ;; Defined at:
+  1287 ;;		line 71 in file "main.c"
+  1288 ;; Parameters:    Size  Location     Type
+  1289 ;;		None
+  1290 ;; Auto vars:     Size  Location     Type
+  1291 ;;		None
+  1292 ;; Return value:  Size  Location     Type
+  1293 ;;                  1    wreg      void 
+  1294 ;; Registers used:
+  1295 ;;		wreg
+  1296 ;; Tracked objects:
+  1297 ;;		On entry : 0/0
+  1298 ;;		On exit  : 0/0
+  1299 ;;		Unchanged: 0/0
+  1300 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1301 ;;      Params:         0       0       0       0
+  1302 ;;      Locals:         0       0       0       0
+  1303 ;;      Temps:          3       0       0       0
+  1304 ;;      Totals:         3       0       0       0
+  1305 ;;Total ram usage:        3 bytes
+  1306 ;; Hardware stack levels used: 1
+  1307 ;; This function calls:
+  1308 ;;		Nothing
+  1309 ;; This function is called by:
+  1310 ;;		_gotoLockedState
+  1311 ;;		_main
+  1312 ;; This function uses a non-reentrant model
+  1313 ;;
+  1314                           
+  1315                           
+  1316                           ;psect for function _notifyCommandAck
+  1317  054C                     _notifyCommandAck:
+  1318  054C                     l1051:	
+  1319                           ;incstack = 0
+  1320                           ; Regs used in _notifyCommandAck: [wreg]
+  1321                           
+  1322                           
+  1323                           ;main.c: 72:     TMR2ON = 1;
+  1324  054C  1283               	bcf	3,5	;RP0=0, select bank0
+  1325  054D  1303               	bcf	3,6	;RP1=0, select bank0
+  1326  054E  1512               	bsf	18,2	;volatile
+  1327  054F                     l1053:
+  1328                           
+  1329                           ;main.c: 73:     CCPR1L = 60;
+  1330  054F  303C               	movlw	60
+  1331  0550  0095               	movwf	21	;volatile
+  1332                           
+  1333                           ;main.c: 74:     _delay((unsigned long)((250)*(4000000/4000.0)));
+  1334  0551  3002               	movlw	2
+  1335  0552  00F2               	movwf	??_notifyCommandAck+2
+  1336  0553  3045               	movlw	69
+  1337  0554  00F1               	movwf	??_notifyCommandAck+1
+  1338  0555  30A9               	movlw	169
+  1339  0556  00F0               	movwf	??_notifyCommandAck
+  1340  0557                     u677:
+  1341  0557  0BF0               	decfsz	??_notifyCommandAck,f
+  1342  0558  2D57               	goto	u677
+  1343  0559  0BF1               	decfsz	??_notifyCommandAck+1,f
+  1344  055A  2D57               	goto	u677
+  1345  055B  0BF2               	decfsz	??_notifyCommandAck+2,f
+  1346  055C  2D57               	goto	u677
+  1347  055D  2D5E               	nop2
+  1348  055E                     l1055:
+  1349                           
+  1350                           ;main.c: 75:     TMR2ON = 0;
+  1351  055E  1283               	bcf	3,5	;RP0=0, select bank0
+  1352  055F  1303               	bcf	3,6	;RP1=0, select bank0
+  1353  0560  1112               	bcf	18,2	;volatile
+  1354  0561                     l71:
+  1355  0561  0008               	return
+  1356  0562                     __end_of_notifyCommandAck:
+  1357                           
+  1358                           	psect	text4
+  1359  05C9                     __ptext4:	
+  1360 ;; *************** function _lock *****************
+  1361 ;; Defined at:
+  1362 ;;		line 56 in file "main.c"
+  1363 ;; Parameters:    Size  Location     Type
+  1364 ;;		None
+  1365 ;; Auto vars:     Size  Location     Type
+  1366 ;;  i               2    4[COMMON] int 
+  1367 ;;  j               2    2[COMMON] int 
+  1368 ;; Return value:  Size  Location     Type
+  1369 ;;                  1    wreg      void 
+  1370 ;; Registers used:
+  1371 ;;		wreg, status,2, btemp+1
+  1372 ;; Tracked objects:
+  1373 ;;		On entry : 0/0
+  1374 ;;		On exit  : 0/0
+  1375 ;;		Unchanged: 0/0
+  1376 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1377 ;;      Params:         0       0       0       0
+  1378 ;;      Locals:         4       0       0       0
+  1379 ;;      Temps:          2       0       0       0
+  1380 ;;      Totals:         6       0       0       0
+  1381 ;;Total ram usage:        6 bytes
+  1382 ;; Hardware stack levels used: 1
+  1383 ;; This function calls:
+  1384 ;;		Nothing
+  1385 ;; This function is called by:
+  1386 ;;		_gotoLockedState
+  1387 ;; This function uses a non-reentrant model
+  1388 ;;
+  1389                           
+  1390                           
+  1391                           ;psect for function _lock
+  1392  05C9                     _lock:
+  1393  05C9                     l1029:	
+  1394                           ;incstack = 0
+  1395                           ; Regs used in _lock: [wreg+status,2+btemp+1]
+  1396                           
+  1397                           
+  1398                           ;main.c: 57:     for (int j=0;j<100;++j) {
+  1399  05C9  01F2               	clrf	lock@j
+  1400  05CA  01F3               	clrf	lock@j+1
+  1401  05CB                     l62:
+  1402                           
+  1403                           ;main.c: 58:         RB0 = 1;
+  1404  05CB  1283               	bcf	3,5	;RP0=0, select bank0
+  1405  05CC  1303               	bcf	3,6	;RP1=0, select bank0
+  1406  05CD  1406               	bsf	6,0	;volatile
+  1407  05CE                     l1035:
+  1408                           
+  1409                           ;main.c: 59:         const int val = 2400;;main.c: 60:         _delay((unsigned long)((v
+      +                          al)*(4000000/4000000.0)));
+  1410  05CE  3004               	movlw	4
+  1411  05CF  00F1               	movwf	??_lock+1
+  1412  05D0  301C               	movlw	28
+  1413  05D1  00F0               	movwf	??_lock
+  1414  05D2                     u687:
+  1415  05D2  0BF0               	decfsz	??_lock,f
+  1416  05D3  2DD2               	goto	u687
+  1417  05D4  0BF1               	decfsz	??_lock+1,f
+  1418  05D5  2DD2               	goto	u687
+  1419  05D6  0000               	nop
+  1420  05D7                     l1037:
+  1421                           
+  1422                           ;main.c: 62:         RB0 = 0;
+  1423  05D7  1283               	bcf	3,5	;RP0=0, select bank0
+  1424  05D8  1303               	bcf	3,6	;RP1=0, select bank0
+  1425  05D9  1006               	bcf	6,0	;volatile
+  1426                           
+  1427                           ;main.c: 63:         int i = 20000 - val;
+  1428  05DA  30C0               	movlw	192
+  1429  05DB  00F4               	movwf	lock@i
+  1430  05DC  3044               	movlw	68
+  1431  05DD  00F5               	movwf	lock@i+1
+  1432  05DE                     l1043:
+  1433                           
+  1434                           ;main.c: 65:             _delay((unsigned long)((1000)*(4000000/4000000.0)));
+  1435  05DE  30C7               	movlw	199
+  1436  05DF  00F0               	movwf	??_lock
+  1437  05E0                     u697:
+  1438  05E0  2DE1               	nop2
+  1439  05E1  0BF0               	decfsz	??_lock,f
+  1440  05E2  2DE0               	goto	u697
+  1441  05E3  2DE4               	nop2
+  1442  05E4  2DE5               	nop2
+  1443                           
+  1444                           ;main.c: 66:         }
+  1445  05E5  3018               	movlw	24
+  1446  05E6  07F4               	addwf	lock@i,f
+  1447  05E7  1803               	skipnc
+  1448  05E8  0AF5               	incf	lock@i+1,f
+  1449  05E9  30FC               	movlw	252
+  1450  05EA  07F5               	addwf	lock@i+1,f
+  1451  05EB                     l1045:
+  1452  05EB  0875               	movf	lock@i+1,w
+  1453  05EC  3A80               	xorlw	128
+  1454  05ED  00FF               	movwf	btemp+1
+  1455  05EE  3083               	movlw	131
+  1456  05EF  027F               	subwf	btemp+1,w
+  1457  05F0  1D03               	skipz
+  1458  05F1  2DF4               	goto	u325
+  1459  05F2  30E8               	movlw	232
+  1460  05F3  0274               	subwf	lock@i,w
+  1461  05F4                     u325:
+  1462  05F4  1803               	skipnc
+  1463  05F5  2DF7               	goto	u321
+  1464  05F6  2DF8               	goto	u320
+  1465  05F7                     u321:
+  1466  05F7  2DDE               	goto	l1043
+  1467  05F8                     u320:
+  1468  05F8                     l1047:
+  1469                           
+  1470                           ;main.c: 67:         _delay((unsigned long)((val % 1000)*(4000000/4000000.0)));
+  1471  05F8  3085               	movlw	133
+  1472  05F9  00F0               	movwf	??_lock
+  1473  05FA                     u707:
+  1474  05FA  0BF0               	decfsz	??_lock,f
+  1475  05FB  2DFA               	goto	u707
+  1476                           
+  1477                           ;main.c: 68:     }
+  1478  05FC  3001               	movlw	1
+  1479  05FD  07F2               	addwf	lock@j,f
+  1480  05FE  1803               	skipnc
+  1481  05FF  0AF3               	incf	lock@j+1,f
+  1482  0600  3000               	movlw	0
+  1483  0601  07F3               	addwf	lock@j+1,f
+  1484  0602                     l1049:
+  1485  0602  0873               	movf	lock@j+1,w
+  1486  0603  3A80               	xorlw	128
+  1487  0604  00FF               	movwf	btemp+1
+  1488  0605  3080               	movlw	128
+  1489  0606  027F               	subwf	btemp+1,w
+  1490  0607  1D03               	skipz
+  1491  0608  2E0B               	goto	u335
+  1492  0609  3064               	movlw	100
+  1493  060A  0272               	subwf	lock@j,w
+  1494  060B                     u335:
+  1495  060B  1C03               	skipc
+  1496  060C  2E0E               	goto	u331
+  1497  060D  2E0F               	goto	u330
+  1498  060E                     u331:
+  1499  060E  2DCB               	goto	l62
+  1500  060F                     u330:
+  1501  060F                     l68:
+  1502  060F  0008               	return
+  1503  0610                     __end_of_lock:
+  1504                           
+  1505                           	psect	text5
+  1506  0534                     __ptext5:	
+  1507 ;; *************** function _gotoIdleState *****************
+  1508 ;; Defined at:
+  1509 ;;		line 92 in file "main.c"
+  1510 ;; Parameters:    Size  Location     Type
+  1511 ;;  state           1    wreg     PTR enum E479
+  1512 ;;		 -> main@state(1), 
+  1513 ;; Auto vars:     Size  Location     Type
+  1514 ;;  state           1    0[COMMON] PTR enum E479
+  1515 ;;		 -> main@state(1), 
+  1516 ;; Return value:  Size  Location     Type
+  1517 ;;                  1    wreg      void 
+  1518 ;; Registers used:
+  1519 ;;		wreg, fsr0l, fsr0h, status,2
+  1520 ;; Tracked objects:
+  1521 ;;		On entry : 0/0
+  1522 ;;		On exit  : 0/0
+  1523 ;;		Unchanged: 0/0
+  1524 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1525 ;;      Params:         0       0       0       0
+  1526 ;;      Locals:         1       0       0       0
+  1527 ;;      Temps:          0       0       0       0
+  1528 ;;      Totals:         1       0       0       0
+  1529 ;;Total ram usage:        1 bytes
+  1530 ;; Hardware stack levels used: 1
+  1531 ;; This function calls:
+  1532 ;;		Nothing
+  1533 ;; This function is called by:
+  1534 ;;		_main
+  1535 ;; This function uses a non-reentrant model
+  1536 ;;
+  1537                           
+  1538                           
+  1539                           ;psect for function _gotoIdleState
+  1540  0534                     _gotoIdleState:
+  1541                           
+  1542                           ;incstack = 0
+  1543                           ; Regs used in _gotoIdleState: [wreg-fsr0h+status,2]
+  1544                           ;gotoIdleState@state stored from wreg
+  1545  0534  00F0               	movwf	gotoIdleState@state
+  1546  0535                     l1085:
+  1547                           
+  1548                           ;main.c: 93:     RA1=0;
+  1549  0535  1283               	bcf	3,5	;RP0=0, select bank0
+  1550  0536  1303               	bcf	3,6	;RP1=0, select bank0
+  1551  0537  1085               	bcf	5,1	;volatile
+  1552                           
+  1553                           ;main.c: 94:     RA2=0;
+  1554  0538  1105               	bcf	5,2	;volatile
+  1555                           
+  1556                           ;main.c: 95:     RA3=0;
+  1557  0539  1185               	bcf	5,3	;volatile
+  1558  053A                     l1087:
+  1559                           
+  1560                           ;main.c: 96:     *state = Idle;
+  1561  053A  0870               	movf	gotoIdleState@state,w
+  1562  053B  0084               	movwf	4
+  1563  053C  1383               	bcf	3,7	;select IRP bank0
+  1564  053D  0180               	clrf	0
+  1565  053E                     l77:
+  1566  053E  0008               	return
+  1567  053F                     __end_of_gotoIdleState:
+  1568                           
+  1569                           	psect	text6
+  1570  0583                     __ptext6:	
+  1571 ;; *************** function _deploy *****************
+  1572 ;; Defined at:
+  1573 ;;		line 39 in file "main.c"
+  1574 ;; Parameters:    Size  Location     Type
+  1575 ;;		None
+  1576 ;; Auto vars:     Size  Location     Type
+  1577 ;;  i               2    3[COMMON] int 
+  1578 ;;  j               2    1[COMMON] int 
+  1579 ;; Return value:  Size  Location     Type
+  1580 ;;                  1    wreg      void 
+  1581 ;; Registers used:
+  1582 ;;		wreg, status,2, btemp+1
+  1583 ;; Tracked objects:
+  1584 ;;		On entry : 0/0
+  1585 ;;		On exit  : 0/0
+  1586 ;;		Unchanged: 0/0
+  1587 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1588 ;;      Params:         0       0       0       0
+  1589 ;;      Locals:         4       0       0       0
+  1590 ;;      Temps:          1       0       0       0
+  1591 ;;      Totals:         5       0       0       0
+  1592 ;;Total ram usage:        5 bytes
+  1593 ;; Hardware stack levels used: 1
+  1594 ;; This function calls:
+  1595 ;;		Nothing
+  1596 ;; This function is called by:
+  1597 ;;		_main
+  1598 ;; This function uses a non-reentrant model
+  1599 ;;
+  1600                           
+  1601                           
+  1602                           ;psect for function _deploy
+  1603  0583                     _deploy:
+  1604  0583                     l1063:	
+  1605                           ;incstack = 0
+  1606                           ; Regs used in _deploy: [wreg+status,2+btemp+1]
+  1607                           
+  1608                           
+  1609                           ;main.c: 41:     for (int j=0;j<100;++j) {
+  1610  0583  01F1               	clrf	deploy@j
+  1611  0584  01F2               	clrf	deploy@j+1
+  1612  0585                     l53:
+  1613                           
+  1614                           ;main.c: 42:     RB0 = 1;
+  1615  0585  1283               	bcf	3,5	;RP0=0, select bank0
+  1616  0586  1303               	bcf	3,6	;RP1=0, select bank0
+  1617  0587  1406               	bsf	6,0	;volatile
+  1618  0588                     l1069:
+  1619                           
+  1620                           ;main.c: 43:     const int val = 1060;;main.c: 44:     _delay((unsigned long)((val)*(400
+      +                          0000/4000000.0)));
+  1621  0588  30D3               	movlw	211
+  1622  0589  00F0               	movwf	??_deploy
+  1623  058A                     u717:
+  1624  058A  2D8B               	nop2
+  1625  058B  0BF0               	decfsz	??_deploy,f
+  1626  058C  2D8A               	goto	u717
+  1627  058D  2D8E               	nop2
+  1628  058E  2D8F               	nop2
+  1629  058F                     l1071:
+  1630                           
+  1631                           ;main.c: 46:     RB0 = 0;
+  1632  058F  1283               	bcf	3,5	;RP0=0, select bank0
+  1633  0590  1303               	bcf	3,6	;RP1=0, select bank0
+  1634  0591  1006               	bcf	6,0	;volatile
+  1635                           
+  1636                           ;main.c: 47:     int i = 20000 - val;
+  1637  0592  30FC               	movlw	252
+  1638  0593  00F3               	movwf	deploy@i
+  1639  0594  3049               	movlw	73
+  1640  0595  00F4               	movwf	deploy@i+1
+  1641  0596                     l1077:
+  1642                           
+  1643                           ;main.c: 49:         _delay((unsigned long)((1000)*(4000000/4000000.0)));
+  1644  0596  30C7               	movlw	199
+  1645  0597  00F0               	movwf	??_deploy
+  1646  0598                     u727:
+  1647  0598  2D99               	nop2
+  1648  0599  0BF0               	decfsz	??_deploy,f
+  1649  059A  2D98               	goto	u727
+  1650  059B  2D9C               	nop2
+  1651  059C  2D9D               	nop2
+  1652                           
+  1653                           ;main.c: 50:     }
+  1654  059D  3018               	movlw	24
+  1655  059E  07F3               	addwf	deploy@i,f
+  1656  059F  1803               	skipnc
+  1657  05A0  0AF4               	incf	deploy@i+1,f
+  1658  05A1  30FC               	movlw	252
+  1659  05A2  07F4               	addwf	deploy@i+1,f
+  1660  05A3                     l1079:
+  1661  05A3  0874               	movf	deploy@i+1,w
+  1662  05A4  3A80               	xorlw	128
+  1663  05A5  00FF               	movwf	btemp+1
+  1664  05A6  3083               	movlw	131
+  1665  05A7  027F               	subwf	btemp+1,w
+  1666  05A8  1D03               	skipz
+  1667  05A9  2DAC               	goto	u345
+  1668  05AA  30E8               	movlw	232
+  1669  05AB  0273               	subwf	deploy@i,w
+  1670  05AC                     u345:
+  1671  05AC  1803               	skipnc
+  1672  05AD  2DAF               	goto	u341
+  1673  05AE  2DB0               	goto	u340
+  1674  05AF                     u341:
+  1675  05AF  2D96               	goto	l1077
+  1676  05B0                     u340:
+  1677  05B0                     l1081:
+  1678                           
+  1679                           ;main.c: 51:     _delay((unsigned long)((val % 1000)*(4000000/4000000.0)));
+  1680  05B0  3013               	movlw	19
+  1681  05B1  00F0               	movwf	??_deploy
+  1682  05B2                     u737:
+  1683  05B2  0BF0               	decfsz	??_deploy,f
+  1684  05B3  2DB2               	goto	u737
+  1685  05B4  2DB5               	nop2
+  1686                           
+  1687                           ;main.c: 52:     }
+  1688  05B5  3001               	movlw	1
+  1689  05B6  07F1               	addwf	deploy@j,f
+  1690  05B7  1803               	skipnc
+  1691  05B8  0AF2               	incf	deploy@j+1,f
+  1692  05B9  3000               	movlw	0
+  1693  05BA  07F2               	addwf	deploy@j+1,f
+  1694  05BB                     l1083:
+  1695  05BB  0872               	movf	deploy@j+1,w
+  1696  05BC  3A80               	xorlw	128
+  1697  05BD  00FF               	movwf	btemp+1
+  1698  05BE  3080               	movlw	128
+  1699  05BF  027F               	subwf	btemp+1,w
+  1700  05C0  1D03               	skipz
+  1701  05C1  2DC4               	goto	u355
+  1702  05C2  3064               	movlw	100
+  1703  05C3  0271               	subwf	deploy@j,w
+  1704  05C4                     u355:
+  1705  05C4  1C03               	skipc
+  1706  05C5  2DC7               	goto	u351
+  1707  05C6  2DC8               	goto	u350
+  1708  05C7                     u351:
+  1709  05C7  2D85               	goto	l53
+  1710  05C8                     u350:
+  1711  05C8                     l59:
+  1712  05C8  0008               	return
+  1713  05C9                     __end_of_deploy:
+  1714                           
+  1715                           	psect	text7
+  1716  0610                     __ptext7:	
+  1717 ;; *************** function ___awmod *****************
+  1718 ;; Defined at:
+  1719 ;;		line 5 in file "D:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c"
+  1720 ;; Parameters:    Size  Location     Type
+  1721 ;;  divisor         2    0[COMMON] int 
+  1722 ;;  dividend        2    2[COMMON] int 
+  1723 ;; Auto vars:     Size  Location     Type
+  1724 ;;  sign            1    6[COMMON] unsigned char 
+  1725 ;;  counter         1    5[COMMON] unsigned char 
+  1726 ;; Return value:  Size  Location     Type
+  1727 ;;                  2    0[COMMON] int 
+  1728 ;; Registers used:
+  1729 ;;		wreg, status,2, status,0
+  1730 ;; Tracked objects:
+  1731 ;;		On entry : 0/0
+  1732 ;;		On exit  : 0/0
+  1733 ;;		Unchanged: 0/0
+  1734 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1735 ;;      Params:         4       0       0       0
+  1736 ;;      Locals:         2       0       0       0
+  1737 ;;      Temps:          1       0       0       0
+  1738 ;;      Totals:         7       0       0       0
+  1739 ;;Total ram usage:        7 bytes
+  1740 ;; Hardware stack levels used: 1
+  1741 ;; This function calls:
+  1742 ;;		Nothing
+  1743 ;; This function is called by:
+  1744 ;;		_main
+  1745 ;; This function uses a non-reentrant model
+  1746 ;;
+  1747                           
+  1748                           
+  1749                           ;psect for function ___awmod
+  1750  0610                     ___awmod:
+  1751  0610                     l1099:	
+  1752                           ;incstack = 0
+  1753                           ; Regs used in ___awmod: [wreg+status,2+status,0]
+  1754                           
+  1755  0610  01F6               	clrf	___awmod@sign
+  1756  0611                     l1101:
+  1757  0611  1FF3               	btfss	___awmod@dividend+1,7
+  1758  0612  2E14               	goto	u361
+  1759  0613  2E15               	goto	u360
+  1760  0614                     u361:
+  1761  0614  2E1C               	goto	l1107
+  1762  0615                     u360:
+  1763  0615                     l1103:
+  1764  0615  09F2               	comf	___awmod@dividend,f
+  1765  0616  09F3               	comf	___awmod@dividend+1,f
+  1766  0617  0AF2               	incf	___awmod@dividend,f
+  1767  0618  1903               	skipnz
+  1768  0619  0AF3               	incf	___awmod@dividend+1,f
+  1769  061A                     l1105:
+  1770  061A  01F6               	clrf	___awmod@sign
+  1771  061B  0AF6               	incf	___awmod@sign,f
+  1772  061C                     l1107:
+  1773  061C  1FF1               	btfss	___awmod@divisor+1,7
+  1774  061D  2E1F               	goto	u371
+  1775  061E  2E20               	goto	u370
+  1776  061F                     u371:
+  1777  061F  2E25               	goto	l1111
+  1778  0620                     u370:
+  1779  0620                     l1109:
+  1780  0620  09F0               	comf	___awmod@divisor,f
+  1781  0621  09F1               	comf	___awmod@divisor+1,f
+  1782  0622  0AF0               	incf	___awmod@divisor,f
+  1783  0623  1903               	skipnz
+  1784  0624  0AF1               	incf	___awmod@divisor+1,f
+  1785  0625                     l1111:
+  1786  0625  0870               	movf	___awmod@divisor,w
+  1787  0626  0471               	iorwf	___awmod@divisor+1,w
+  1788  0627  1903               	btfsc	3,2
+  1789  0628  2E2A               	goto	u381
+  1790  0629  2E2B               	goto	u380
+  1791  062A                     u381:
+  1792  062A  2E5A               	goto	l1129
+  1793  062B                     u380:
+  1794  062B                     l1113:
+  1795  062B  01F5               	clrf	___awmod@counter
+  1796  062C  0AF5               	incf	___awmod@counter,f
+  1797  062D  2E39               	goto	l1119
+  1798  062E                     l1115:
+  1799  062E  3001               	movlw	1
+  1800  062F                     u395:
+  1801  062F  1003               	clrc
+  1802  0630  0DF0               	rlf	___awmod@divisor,f
+  1803  0631  0DF1               	rlf	___awmod@divisor+1,f
+  1804  0632  3EFF               	addlw	-1
+  1805  0633  1D03               	skipz
+  1806  0634  2E2F               	goto	u395
+  1807  0635                     l1117:
+  1808  0635  3001               	movlw	1
+  1809  0636  00F4               	movwf	??___awmod
+  1810  0637  0874               	movf	??___awmod,w
+  1811  0638  07F5               	addwf	___awmod@counter,f
+  1812  0639                     l1119:
+  1813  0639  1FF1               	btfss	___awmod@divisor+1,7
+  1814  063A  2E3C               	goto	u401
+  1815  063B  2E3D               	goto	u400
+  1816  063C                     u401:
+  1817  063C  2E2E               	goto	l1115
+  1818  063D                     u400:
+  1819  063D                     l1121:
+  1820  063D  0871               	movf	___awmod@divisor+1,w
+  1821  063E  0273               	subwf	___awmod@dividend+1,w
+  1822  063F  1D03               	skipz
+  1823  0640  2E43               	goto	u415
+  1824  0641  0870               	movf	___awmod@divisor,w
+  1825  0642  0272               	subwf	___awmod@dividend,w
+  1826  0643                     u415:
+  1827  0643  1C03               	skipc
+  1828  0644  2E46               	goto	u411
+  1829  0645  2E47               	goto	u410
+  1830  0646                     u411:
+  1831  0646  2E4D               	goto	l1125
+  1832  0647                     u410:
+  1833  0647                     l1123:
+  1834  0647  0870               	movf	___awmod@divisor,w
+  1835  0648  02F2               	subwf	___awmod@dividend,f
+  1836  0649  0871               	movf	___awmod@divisor+1,w
+  1837  064A  1C03               	skipc
+  1838  064B  03F3               	decf	___awmod@dividend+1,f
+  1839  064C  02F3               	subwf	___awmod@dividend+1,f
+  1840  064D                     l1125:
+  1841  064D  3001               	movlw	1
+  1842  064E                     u425:
+  1843  064E  1003               	clrc
+  1844  064F  0CF1               	rrf	___awmod@divisor+1,f
+  1845  0650  0CF0               	rrf	___awmod@divisor,f
+  1846  0651  3EFF               	addlw	-1
+  1847  0652  1D03               	skipz
+  1848  0653  2E4E               	goto	u425
+  1849  0654                     l1127:
+  1850  0654  3001               	movlw	1
+  1851  0655  02F5               	subwf	___awmod@counter,f
+  1852  0656  1D03               	btfss	3,2
+  1853  0657  2E59               	goto	u431
+  1854  0658  2E5A               	goto	u430
+  1855  0659                     u431:
+  1856  0659  2E3D               	goto	l1121
+  1857  065A                     u430:
+  1858  065A                     l1129:
+  1859  065A  0876               	movf	___awmod@sign,w
+  1860  065B  1903               	btfsc	3,2
+  1861  065C  2E5E               	goto	u441
+  1862  065D  2E5F               	goto	u440
+  1863  065E                     u441:
+  1864  065E  2E64               	goto	l1133
+  1865  065F                     u440:
+  1866  065F                     l1131:
+  1867  065F  09F2               	comf	___awmod@dividend,f
+  1868  0660  09F3               	comf	___awmod@dividend+1,f
+  1869  0661  0AF2               	incf	___awmod@dividend,f
+  1870  0662  1903               	skipnz
+  1871  0663  0AF3               	incf	___awmod@dividend+1,f
+  1872  0664                     l1133:
+  1873  0664  0873               	movf	___awmod@dividend+1,w
+  1874  0665  00F1               	movwf	?___awmod+1
+  1875  0666  0872               	movf	___awmod@dividend,w
+  1876  0667  00F0               	movwf	?___awmod
+  1877  0668                     l369:
+  1878  0668  0008               	return
+  1879  0669                     __end_of___awmod:
+  1880  007E                     btemp	set	126	;btemp
+  1881  007E                     wtemp0	set	126
+  1882                           
+  1883                           	psect	config
+  1884                           
+  1885                           ;Config register CONFIG @ 0x2007
+  1886                           ;	Oscillator Selection bits
+  1887                           ;	FOSC = INTOSCCLK, INTOSC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, I/O funct
+      +                          ion on RA7/OSC1/CLKIN
+  1888                           ;	Watchdog Timer Enable bit
+  1889                           ;	WDTE = OFF, WDT disabled
+  1890                           ;	Power-up Timer Enable bit
+  1891                           ;	PWRTE = ON, PWRT enabled
+  1892                           ;	RA5/MCLR/VPP Pin Function Select bit
+  1893                           ;	MCLRE = OFF, RA5/MCLR/VPP pin function is digital input, MCLR internally tied to VDD
+  1894                           ;	Brown-out Detect Enable bit
+  1895                           ;	BOREN = OFF, BOD disabled
+  1896                           ;	Low-Voltage Programming Enable bit
+  1897                           ;	LVP = OFF, RB4/PGM pin has digital I/O function, HV on MCLR must be used for programmi
+      +                          ng
+  1898                           ;	Data EE Memory Code Protection bit
+  1899                           ;	CPD = OFF, Data memory code protection off
+  1900                           ;	Flash Program Memory Code Protection bit
+  1901                           ;	CP = OFF, Code protection off
+  1902  2007                     	org	8199
+  1903  2007  3F11               	dw	16145
+
+Data Sizes:
+    Strings     0
+    Constant    4
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     10      10
+    BANK0            80     27      27
+    BANK1            80      0       0
+    BANK2            48      0       0
+
+Pointer List with Targets:
+
+    gotoLockedState@state	PTR enum E479 size(1) Largest target is 1
+		 -> main@state(BANK0[1]), 
+
+    gotoIdleState@state	PTR enum E479 size(1) Largest target is 1
+		 -> main@state(BANK0[1]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->___awmod
+    _main->_gotoLockedState
+    _gotoLockedState->_lock
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                32    32      0    1759
+                                              7 COMMON     3     3      0
+                                              0 BANK0     27    27      0
+                            ___awmod
+                             _deploy
+                      _gotoIdleState
+                    _gotoLockedState
+                   _notifyCommandAck
+                 _notifyStateChanged
+ ---------------------------------------------------------------------------------
+ (1) _gotoLockedState                                      1     1      0     147
+                                              6 COMMON     1     1      0
+                               _lock
+                   _notifyCommandAck
+                 _notifyStateChanged
+ ---------------------------------------------------------------------------------
+ (1) _notifyStateChanged                                   3     3      0       0
+                                              0 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ (1) _notifyCommandAck                                     3     3      0       0
+                                              0 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ (2) _lock                                                 6     6      0      92
+                                              0 COMMON     6     6      0
+ ---------------------------------------------------------------------------------
+ (1) _gotoIdleState                                        1     1      0      88
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _deploy                                               5     5      0      92
+                                              0 COMMON     5     5      0
+ ---------------------------------------------------------------------------------
+ (1) ___awmod                                              7     3      4     752
+                                              0 COMMON     7     3      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   ___awmod
+   _deploy
+   _gotoIdleState
+   _gotoLockedState
+     _lock
+     _notifyCommandAck
+     _notifyStateChanged
+   _notifyCommandAck
+   _notifyStateChanged
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      A       A       1       71.4%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BANK0               50     1B      1B       3       33.8%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+ABS                  0      0       0       4        0.0%
+BITBANK0            50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK2            30      0       0       8        0.0%
+BANK2               30      0       0       9        0.0%
+DATA                 0      0       0      10        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Thu Jun 03 23:35:19 2021
+
+                            pc 0002                             l53 0585                             l62 05CB  
+                           l71 0561                             l80 054B                             l74 0582  
+                           l59 05C8                             l91 0719                             l68 060F  
+                           l77 053E                             l85 0698                             l97 072E  
+                           fsr 0004                            l103 07FC                            l112 07D3  
+                          l369 0668                            _RA1 0029                            _RB0 0030  
+                          _RA2 002A                            _RA3 002B                            _RB1 0031  
+                          _RB4 0034                            u400 063D                            u320 05F8  
+                          u401 063C                            u321 05F7                            u410 0647  
+                          u330 060F                            u411 0646                            u331 060E  
+                          u340 05B0                            u500 06E9                            u341 05AF  
+                          u325 05F4                            u501 06E8                            u430 065A  
+                          u350 05C8                            u510 06EF                            _PR2 0092  
+                          u431 0659                            u415 0643                            u351 05C7  
+                          u335 060B                            u511 06EE                            u440 065F  
+                          u360 0615                            u600 078E                            u520 06FC  
+                          u441 065E                            u425 064E                            u361 0614  
+                          u345 05AC                            u601 078D                            u521 06FB  
+                          u370 0620                            u610 07BF                            u530 070F  
+                          u450 06AD                            u371 061F                            u355 05C4  
+                          u611 07BE                            u531 070E                            u451 06AC  
+                          u380 062B                            u620 07CF                            u540 0725  
+                          u460 06B3                            u381 062A                            u621 07CE  
+                          u541 0724                            u461 06B2                            u550 0747  
+                          u470 06C3                            u615 07BB                            u551 0746  
+                          u535 070B                            u471 06C2                            u560 0750  
+                          u480 06C9                            u625 07CB                            u561 074F  
+                          u481 06C8                            u570 075C                            u490 06DC  
+                          u395 062F                            u707 05FA                            u571 075B  
+                          u491 06DB              main@buttonClicked 0020                            u580 076C  
+                          u717 058A                            u581 076B                            u637 0729  
+                          u590 0784                            u727 0598                            u591 0783  
+                          u647 0773                            u737 05B2                            u657 0568  
+                          u667 0578                            u677 0557                            u687 05D2  
+                          u697 05E0                            fsr0 0004                            indf 0000  
+                 ___awmod@sign 0076             _notifyStateChanged 0562                           l1101 0611  
+                         l1111 0625                           l1103 0615                           l1121 063D  
+                         l1113 062B                           l1105 061A                           l1201 0696  
+                         l1131 065F                           l1123 0647                           l1115 062E  
+                         l1107 061C                           l1043 05DE                           l1035 05CE  
+                         l1051 054C                           l1211 06BC                           l1203 06A6  
+                         l1133 0664                           l1125 064D                           l1117 0635  
+                         l1109 0620                           l1045 05EB                           l1037 05D7  
+                         l1029 05C9                           l1053 054F                           l1061 057F  
+                         l1301 07A9                           l1221 06D2                           l1213 06BD  
+                         l1205 06AD                           l1141 066E                           l1127 0654  
+                         l1119 0639                           l1071 058F                           l1063 0583  
+                         l1047 05F8                           l1055 055E                           l1303 07BF  
+                         l1311 07E6                           l1231 06E3                           l1223 06D4  
+                         l1215 06C3                           l1207 06B3                           l1151 0678  
+                         l1143 066F                           l1129 065A                           l1081 05B0  
+                         l1049 0602                           l1057 0562                           l1305 07CF  
+                         l1241 06FC                           l1233 06E9                           l1225 06D6  
+                         l1217 06C9                           l1209 06B5                           l1161 067F  
+                         l1153 0679                           l1145 0670                           l1137 0669  
+                         l1083 05BB                           l1059 056F                           l1091 0541  
+                         l1307 07D6                           l1251 071F                           l1243 0702  
+                         l1235 06EF                           l1227 06DC                           l1219 06CB  
+                         l1171 0683                           l1163 067F                           l1155 067A  
+                         l1147 0674                           l1139 066C                           l1077 0596  
+                         l1069 0588                           l1085 0535                           l1093 0542  
+                         l1261 074A                           l1253 0725                           l1245 070F  
+                         l1237 06F3                           l1229 06DE                           l1181 068A  
+                         l1173 0684                           l1165 0680                           l1157 067B  
+                         l1149 0677                           l1079 05A3                           l1087 053A  
+                         l1095 0547                           l1271 075C                           l1263 0750  
+                         l1255 0734                           l1247 0715                           l1239 06F6  
+                         l1191 068E                           l1183 068B                           l1175 0685  
+                         l1167 0681                           l1159 067C                           l1097 054A  
+                         l1089 0540                           l1281 076C                           l1273 075D  
+                         l1265 0751                           l1257 0741                           l1249 0717  
+                         l1193 0690                           l1185 068C                           l1177 0686  
+                         l1169 0682                           l1099 0610                           l1291 0784  
+                         l1283 076D                           l1275 0763                           l1259 0747  
+                         l1195 0692                           l1187 068C                           l1179 0687  
+                         l1349 07EE                           l1293 0786                           l1285 077A  
+                         l1277 0764                           l1269 0756                           l1197 0692  
+                         l1189 068C                           l1295 078E                           l1287 077B  
+                         l1279 0766                           l1199 0692                           l1297 07A1  
+                         l1289 077E                           l1299 07A3            ?_notifyStateChanged 0070  
+                         _main 0669                           _lock 05C9                           btemp 007E  
+main@buttonClickedPendingEvent 002A                           start 0000             main@buttonReleased 0022  
+         ??_notifyStateChanged 0070                _gotoLockedState 053F                          ?_main 0070  
+                        ?_lock 0070                          _CCP1X 00BD                          _CCP1Y 00BC  
+              __end_of___awmod 0669                          _nRBPU 040F                          lock@i 0074  
+                        lock@j 0072                          pclath 000A                          status 0003  
+                        wtemp0 007E     main@buttonLongClickedEvent 0034                __end_oflock@val 0009  
+              __initialization 07FE                   __end_of_main 07FE                   __end_of_lock 0610  
+       __size_of_gotoIdleState 000B                         ??_main 0077                         ??_lock 0070  
+                       _CCP1M2 00BA                         _CCP1M3 00BB                         _CCPR1L 0015  
+    __size_of_notifyCommandAck 0016                         _TMR2ON 0092                         _TRISA1 0429  
+                       _TRISB0 0430                         _TRISA2 042A                         _TRISA3 042B  
+                       _TRISB1 0431                         _TRISB3 0433                         _TRISB4 0434  
+      __end_of_gotoLockedState 054C                      ??___awmod 0074                         _deploy 0583  
+              ___awmod@divisor 0070                ___awmod@counter 0075                  _gotoIdleState 0534  
+      __end_of__initialization 07FE                 __pcstackCOMMON 0070                 ?_gotoIdleState 0070  
+         main@buttonWasPressed 002E                     __pmaintext 0669               ?_gotoLockedState 0070  
+                      ?_deploy 0070                        _T2CKPS0 0090                        _T2CKPS1 0091  
+             _notifyCommandAck 054C                     __stringtab 0001                        ___awmod 0610  
+                    _CMCONbits 001F                __size_of_deploy 0046    __size_of_notifyStateChanged 0021  
+                      __ptext1 053F                        __ptext2 0562                        __ptext3 054C  
+                      __ptext4 05C9                        __ptext5 0534                        __ptext6 0583  
+                      __ptext7 0610                ??_gotoIdleState 0070               ___awmod@dividend 0072  
+                      deploy@i 0073                        deploy@j 0071           end_of_initialization 07FE  
+                      lock@val 0007              __end_ofdeploy@val 000B               main@buttonPushed 0038  
+               __end_of_deploy 05C9            start_initialization 07FE                       ??_deploy 0070  
+     __end_of_notifyCommandAck 0562                      ___latbits 0000                  __pcstackBANK0 0020  
+              main@closeButton 002C        main@buttonPressedPeriod 0028                       ?___awmod 0070  
+              main@displayTime 0036                      __pstrings 0001       __size_of_gotoLockedState 000D  
+   __end_of_notifyStateChanged 0583                      deploy@val 0009         main@buttonClickedEvent 0032  
+                  __stringbase 0006                      main@delay 0030                      main@state 003A  
+        __end_of_gotoIdleState 053F               __size_of___awmod 0059             __end_of__stringtab 0007  
+                     _main$122 0026                       _main$124 0027           gotoLockedState@state 0076  
+            ??_gotoLockedState 0076             main@launchDetected 0024                  __size_of_main 0195  
+                __size_of_lock 0047              ?_notifyCommandAck 0070             ??_notifyCommandAck 0070  
+                    stringcode 0001             gotoIdleState@state 0070                       stringdir 0001  
+                     stringtab 0001  

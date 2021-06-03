@@ -1,0 +1,884 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"1482 C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1482: extern volatile __bit RB0 __attribute__((address(0x30)));
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+[v F461 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF461 ~T0 @X0 0 e ]
+[p i __delay ]
+"1593 C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1593: extern volatile __bit TMR2ON __attribute__((address(0x92)));
+[v _TMR2ON `Vb ~T0 @X0 0 e@146 ]
+"610
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 610: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
+"92 main.c
+[; ;main.c: 92: void gotoIdleState(enum State *state) {
+[c E479 0 1 2 3 .. ]
+[n E479 State Idle Closed Armed ProgramSeconds  ]
+"1461 C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1461: extern volatile __bit RA1 __attribute__((address(0x29)));
+[v _RA1 `Vb ~T0 @X0 0 e@41 ]
+"1464
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1464: extern volatile __bit RA2 __attribute__((address(0x2A)));
+[v _RA2 `Vb ~T0 @X0 0 e@42 ]
+"1467
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1467: extern volatile __bit RA3 __attribute__((address(0x2B)));
+[v _RA3 `Vb ~T0 @X0 0 e@43 ]
+[p mainexit ]
+"773
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 773:     struct {
+[s S29 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S29 . CM CIS C1INV C2INV C1OUT C2OUT ]
+"781
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 781:     struct {
+[s S30 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . CM0 CM1 CM2 ]
+"772
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 772: typedef union {
+[u S28 `S29 1 `S30 1 ]
+[n S28 . . . ]
+"787
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 787: extern volatile CMCONbits_t CMCONbits __attribute__((address(0x01F)));
+[v _CMCONbits `VS28 ~T0 @X0 0 e@31 ]
+"1377
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1377: extern volatile __bit CCP1M3 __attribute__((address(0xBB)));
+[v _CCP1M3 `Vb ~T0 @X0 0 e@187 ]
+"1374
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1374: extern volatile __bit CCP1M2 __attribute__((address(0xBA)));
+[v _CCP1M2 `Vb ~T0 @X0 0 e@186 ]
+"1137
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1137: extern volatile unsigned char PR2 __attribute__((address(0x092)));
+[v _PR2 `Vuc ~T0 @X0 0 e@146 ]
+"1380
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1380: extern volatile __bit CCP1X __attribute__((address(0xBD)));
+[v _CCP1X `Vb ~T0 @X0 0 e@189 ]
+"1383
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1383: extern volatile __bit CCP1Y __attribute__((address(0xBC)));
+[v _CCP1Y `Vb ~T0 @X0 0 e@188 ]
+"1566
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1566: extern volatile __bit T2CKPS1 __attribute__((address(0x91)));
+[v _T2CKPS1 `Vb ~T0 @X0 0 e@145 ]
+"1563
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1563: extern volatile __bit T2CKPS0 __attribute__((address(0x90)));
+[v _T2CKPS0 `Vb ~T0 @X0 0 e@144 ]
+"1641
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1641: extern volatile __bit TRISB3 __attribute__((address(0x433)));
+[v _TRISB3 `Vb ~T0 @X0 0 e@1075 ]
+"1722
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1722: extern volatile __bit nRBPU __attribute__((address(0x40F)));
+[v _nRBPU `Vb ~T0 @X0 0 e@1039 ]
+"1632
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1632: extern volatile __bit TRISB0 __attribute__((address(0x430)));
+[v _TRISB0 `Vb ~T0 @X0 0 e@1072 ]
+"1611
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1611: extern volatile __bit TRISA1 __attribute__((address(0x429)));
+[v _TRISA1 `Vb ~T0 @X0 0 e@1065 ]
+"1614
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1614: extern volatile __bit TRISA2 __attribute__((address(0x42A)));
+[v _TRISA2 `Vb ~T0 @X0 0 e@1066 ]
+"1617
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1617: extern volatile __bit TRISA3 __attribute__((address(0x42B)));
+[v _TRISA3 `Vb ~T0 @X0 0 e@1067 ]
+"1644
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1644: extern volatile __bit TRISB4 __attribute__((address(0x434)));
+[v _TRISB4 `Vb ~T0 @X0 0 e@1076 ]
+"1635
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1635: extern volatile __bit TRISB1 __attribute__((address(0x431)));
+[v _TRISB1 `Vb ~T0 @X0 0 e@1073 ]
+"1494
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1494: extern volatile __bit RB4 __attribute__((address(0x34)));
+[v _RB4 `Vb ~T0 @X0 0 e@52 ]
+"1485
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1485: extern volatile __bit RB1 __attribute__((address(0x31)));
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"54 C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"230
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 230: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"292
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 292: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"312
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 312: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"390
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 390: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"447
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 447: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"454
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 454: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"461
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 461: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"468
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 468: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"527
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 527: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"534
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 534: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"605
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 605: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"612
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 612: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"619
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 619: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"626
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 626: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"684
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 684: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"755
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 755: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"762
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 762: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"769
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 769: __asm("CMCON equ 01Fh");
+[; <" CMCON equ 01Fh ;# ">
+"839
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 839: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"909
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 909: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"971
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 971: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1033
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1033: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1090
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1090: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1139
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1139: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1146
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1146: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"1203
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1203: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"1210
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1210: __asm("EEDATA equ 09Ah");
+[; <" EEDATA equ 09Ah ;# ">
+"1217
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1217: __asm("EEADR equ 09Bh");
+[; <" EEADR equ 09Bh ;# ">
+"1224
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1224: __asm("EECON1 equ 09Ch");
+[; <" EECON1 equ 09Ch ;# ">
+"1262
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1262: __asm("EECON2 equ 09Dh");
+[; <" EECON2 equ 09Dh ;# ">
+"1269
+[; ;C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
+[; <" VRCON equ 09Fh ;# ">
+"17 main.c
+[p x FOSC  =  INTOSCCLK  ]
+"18
+[p x WDTE  =  OFF        ]
+"19
+[p x PWRTE  =  ON       ]
+"20
+[p x MCLRE  =  OFF       ]
+"21
+[p x BOREN  =  OFF       ]
+"22
+[p x LVP  =  OFF         ]
+"23
+[p x CPD  =  OFF         ]
+"24
+[p x CP  =  OFF          ]
+"39
+[; ;main.c: 39: void deploy() {
+[v _deploy `(v ~T0 @X0 1 ef ]
+{
+[e :U _deploy ]
+[f ]
+"41
+[; ;main.c: 41:     for (int j=0;j<100;++j) {
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 100 `i 52  ]
+[e $U 53  ]
+[e :U 52 ]
+{
+"42
+[; ;main.c: 42:     RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
+"43
+[; ;main.c: 43:     const int val = 1060;
+[v F471 `Ci ~T0 @X0 1 s val ]
+[i F471
+-> 1060 `i
+]
+"44
+[; ;main.c: 44:     _delay((unsigned long)((val)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> F471 `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"46
+[; ;main.c: 46:     RB0 = 0;
+[e = _RB0 -> -> 0 `i `b ]
+"47
+[; ;main.c: 47:     int i = 20000 - val;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i - -> 20000 `i F471 ]
+"48
+[; ;main.c: 48:     for (; i >= 1000; i -= 1000) {
+{
+[e $ >= _i -> 1000 `i 55  ]
+[e $U 56  ]
+[e :U 55 ]
+{
+"49
+[; ;main.c: 49:         _delay((unsigned long)((1000)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"50
+[; ;main.c: 50:     }
+}
+[e =- _i -> 1000 `i ]
+[e $ >= _i -> 1000 `i 55  ]
+[e :U 56 ]
+}
+"51
+[; ;main.c: 51:     _delay((unsigned long)((val % 1000)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> % F471 -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"52
+[; ;main.c: 52:     }
+}
+[e =+ _j -> 1 `i ]
+[e $ < _j -> 100 `i 52  ]
+[e :U 53 ]
+}
+"54
+[; ;main.c: 54: }
+[e :UE 51 ]
+}
+"56
+[; ;main.c: 56: void lock() {
+[v _lock `(v ~T0 @X0 1 ef ]
+{
+[e :U _lock ]
+[f ]
+"57
+[; ;main.c: 57:     for (int j=0;j<100;++j) {
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 100 `i 59  ]
+[e $U 60  ]
+[e :U 59 ]
+{
+"58
+[; ;main.c: 58:         RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
+"59
+[; ;main.c: 59:         const int val = 2400;
+[v F475 `Ci ~T0 @X0 1 s val ]
+[i F475
+-> 2400 `i
+]
+"60
+[; ;main.c: 60:         _delay((unsigned long)((val)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> F475 `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"62
+[; ;main.c: 62:         RB0 = 0;
+[e = _RB0 -> -> 0 `i `b ]
+"63
+[; ;main.c: 63:         int i = 20000 - val;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i - -> 20000 `i F475 ]
+"64
+[; ;main.c: 64:         for (; i >= 1000; i -= 1000) {
+{
+[e $ >= _i -> 1000 `i 62  ]
+[e $U 63  ]
+[e :U 62 ]
+{
+"65
+[; ;main.c: 65:             _delay((unsigned long)((1000)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"66
+[; ;main.c: 66:         }
+}
+[e =- _i -> 1000 `i ]
+[e $ >= _i -> 1000 `i 62  ]
+[e :U 63 ]
+}
+"67
+[; ;main.c: 67:         _delay((unsigned long)((val % 1000)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> % F475 -> 1000 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"68
+[; ;main.c: 68:     }
+}
+[e =+ _j -> 1 `i ]
+[e $ < _j -> 100 `i 59  ]
+[e :U 60 ]
+}
+"69
+[; ;main.c: 69: }
+[e :UE 58 ]
+}
+"71
+[; ;main.c: 71: void notifyCommandAck() {
+[v _notifyCommandAck `(v ~T0 @X0 1 ef ]
+{
+[e :U _notifyCommandAck ]
+[f ]
+"72
+[; ;main.c: 72:     TMR2ON = 1;
+[e = _TMR2ON -> -> 1 `i `b ]
+"73
+[; ;main.c: 73:     CCPR1L = 60;
+[e = _CCPR1L -> -> 60 `i `uc ]
+"74
+[; ;main.c: 74:     _delay((unsigned long)((250)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"75
+[; ;main.c: 75:     TMR2ON = 0;
+[e = _TMR2ON -> -> 0 `i `b ]
+"76
+[; ;main.c: 76: }
+[e :UE 65 ]
+}
+"78
+[; ;main.c: 78: void notifyStateChanged() {
+[v _notifyStateChanged `(v ~T0 @X0 1 ef ]
+{
+[e :U _notifyStateChanged ]
+[f ]
+"79
+[; ;main.c: 79:     _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"80
+[; ;main.c: 80:     TMR2ON = 1;
+[e = _TMR2ON -> -> 1 `i `b ]
+"81
+[; ;main.c: 81:     _delay((unsigned long)((250)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"82
+[; ;main.c: 82:     TMR2ON = 0;
+[e = _TMR2ON -> -> 0 `i `b ]
+"84
+[; ;main.c: 84: }
+[e :UE 66 ]
+}
+"92
+[; ;main.c: 92: void gotoIdleState(enum State *state) {
+[v _gotoIdleState `(v ~T0 @X0 1 ef1`*E479 ]
+{
+[e :U _gotoIdleState ]
+[v _state `*E479 ~T0 @X0 1 r1 ]
+[f ]
+"93
+[; ;main.c: 93:     RA1=0;
+[e = _RA1 -> -> 0 `i `b ]
+"94
+[; ;main.c: 94:     RA2=0;
+[e = _RA2 -> -> 0 `i `b ]
+"95
+[; ;main.c: 95:     RA3=0;
+[e = _RA3 -> -> 0 `i `b ]
+"96
+[; ;main.c: 96:     *state = Idle;
+[e = *U _state . `E479 0 ]
+"97
+[; ;main.c: 97: }
+[e :UE 67 ]
+}
+"99
+[; ;main.c: 99: void gotoLockedState(enum State *state) {
+[v _gotoLockedState `(v ~T0 @X0 1 ef1`*E479 ]
+{
+[e :U _gotoLockedState ]
+[v _state `*E479 ~T0 @X0 1 r1 ]
+[f ]
+"100
+[; ;main.c: 100:     notifyCommandAck();
+[e ( _notifyCommandAck ..  ]
+"101
+[; ;main.c: 101:     lock();
+[e ( _lock ..  ]
+"102
+[; ;main.c: 102:     *state = Closed;
+[e = *U _state . `E479 1 ]
+"103
+[; ;main.c: 103:     RA1 = 1;
+[e = _RA1 -> -> 1 `i `b ]
+"104
+[; ;main.c: 104:     notifyStateChanged();
+[e ( _notifyStateChanged ..  ]
+"105
+[; ;main.c: 105: }
+[e :UE 68 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"107
+[; ;main.c: 107: int main() {
+[v _main `(i ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"108
+[; ;main.c: 108:     enum State state = Idle;
+[v _state `E479 ~T0 @X0 1 a ]
+[e = _state . `E479 0 ]
+"109
+[; ;main.c: 109:     CMCONbits.CM = 0b111;
+[e = . . _CMCONbits 0 0 -> -> 7 `i `uc ]
+"114
+[; ;main.c: 114:     CCP1M3 = 1;
+[e = _CCP1M3 -> -> 1 `i `b ]
+"115
+[; ;main.c: 115:     CCP1M2 = 1;
+[e = _CCP1M2 -> -> 1 `i `b ]
+"116
+[; ;main.c: 116:     PR2 = 249;
+[e = _PR2 -> -> 249 `i `uc ]
+"117
+[; ;main.c: 117:     CCPR1L = 0;
+[e = _CCPR1L -> -> 0 `i `uc ]
+"118
+[; ;main.c: 118:     CCP1X = 0;
+[e = _CCP1X -> -> 0 `i `b ]
+"119
+[; ;main.c: 119:     CCP1Y = 0;
+[e = _CCP1Y -> -> 0 `i `b ]
+"121
+[; ;main.c: 121:     T2CKPS1 = 0;
+[e = _T2CKPS1 -> -> 0 `i `b ]
+"122
+[; ;main.c: 122:     T2CKPS0 = 0;
+[e = _T2CKPS0 -> -> 0 `i `b ]
+"123
+[; ;main.c: 123:     TMR2ON = 1;
+[e = _TMR2ON -> -> 1 `i `b ]
+"124
+[; ;main.c: 124:     TRISB3 = 0;
+[e = _TRISB3 -> -> 0 `i `b ]
+"126
+[; ;main.c: 126:     int launchDetected = 0;
+[v _launchDetected `i ~T0 @X0 1 a ]
+[e = _launchDetected -> 0 `i ]
+"128
+[; ;main.c: 128:     nRBPU = 0;
+[e = _nRBPU -> -> 0 `i `b ]
+"130
+[; ;main.c: 130:     TRISB0 = 0;
+[e = _TRISB0 -> -> 0 `i `b ]
+"131
+[; ;main.c: 131:     TRISB3 = 0;
+[e = _TRISB3 -> -> 0 `i `b ]
+"133
+[; ;main.c: 133:     TRISA1 = 0;
+[e = _TRISA1 -> -> 0 `i `b ]
+"134
+[; ;main.c: 134:     TRISA2 = 0;
+[e = _TRISA2 -> -> 0 `i `b ]
+"135
+[; ;main.c: 135:     TRISA3 = 0;
+[e = _TRISA3 -> -> 0 `i `b ]
+"137
+[; ;main.c: 137:     TRISB4 = 1;
+[e = _TRISB4 -> -> 1 `i `b ]
+"138
+[; ;main.c: 138:     TRISB1 = 1;
+[e = _TRISB1 -> -> 1 `i `b ]
+"140
+[; ;main.c: 140:     RA1=0;
+[e = _RA1 -> -> 0 `i `b ]
+"141
+[; ;main.c: 141:     RA2=0;
+[e = _RA2 -> -> 0 `i `b ]
+"142
+[; ;main.c: 142:     RA3=0;
+[e = _RA3 -> -> 0 `i `b ]
+"144
+[; ;main.c: 144:     int buttonPushed = 0;
+[v _buttonPushed `i ~T0 @X0 1 a ]
+[e = _buttonPushed -> 0 `i ]
+"146
+[; ;main.c: 146:     int buttonPressed = 0;
+[v _buttonPressed `i ~T0 @X0 1 a ]
+[e = _buttonPressed -> 0 `i ]
+"147
+[; ;main.c: 147:     int buttonPressedPeriod=0;
+[v _buttonPressedPeriod `i ~T0 @X0 1 a ]
+[e = _buttonPressedPeriod -> 0 `i ]
+"148
+[; ;main.c: 148:     int buttonWasPressed = 0;
+[v _buttonWasPressed `i ~T0 @X0 1 a ]
+[e = _buttonWasPressed -> 0 `i ]
+"150
+[; ;main.c: 150:     int buttonClickedPendingEvent = 0;
+[v _buttonClickedPendingEvent `i ~T0 @X0 1 a ]
+[e = _buttonClickedPendingEvent -> 0 `i ]
+"151
+[; ;main.c: 151:     int buttonClickedEvent = 0;
+[v _buttonClickedEvent `i ~T0 @X0 1 a ]
+[e = _buttonClickedEvent -> 0 `i ]
+"153
+[; ;main.c: 153:     int buttonLongClickedEvent = 0;
+[v _buttonLongClickedEvent `i ~T0 @X0 1 a ]
+[e = _buttonLongClickedEvent -> 0 `i ]
+"155
+[; ;main.c: 155:     int delay = 2000;
+[v _delay `i ~T0 @X0 1 a ]
+[e = _delay -> 2000 `i ]
+"156
+[; ;main.c: 156:     int displayTime=0;
+[v _displayTime `i ~T0 @X0 1 a ]
+[e = _displayTime -> 0 `i ]
+"158
+[; ;main.c: 158:     while (1) {
+[e :U 71 ]
+{
+"159
+[; ;main.c: 159:         buttonPushed = !RB4;
+[e = _buttonPushed -> ! _RB4 `i ]
+"161
+[; ;main.c: 161:         int buttonClicked = !buttonWasPressed && buttonPushed;
+[v _buttonClicked `i ~T0 @X0 1 a ]
+[e = _buttonClicked -> && ! != _buttonWasPressed -> 0 `i != _buttonPushed -> 0 `i `i ]
+"162
+[; ;main.c: 162:         int buttonReleased = buttonWasPressed && !buttonPushed;
+[v _buttonReleased `i ~T0 @X0 1 a ]
+[e = _buttonReleased -> && != _buttonWasPressed -> 0 `i ! != _buttonPushed -> 0 `i `i ]
+"163
+[; ;main.c: 163:         buttonClickedEvent = 0;
+[e = _buttonClickedEvent -> 0 `i ]
+"164
+[; ;main.c: 164:         buttonLongClickedEvent =0;
+[e = _buttonLongClickedEvent -> 0 `i ]
+"166
+[; ;main.c: 166:         if (buttonClicked) {
+[e $ ! != _buttonClicked -> 0 `i 73  ]
+{
+"167
+[; ;main.c: 167:             buttonPressedPeriod=0;
+[e = _buttonPressedPeriod -> 0 `i ]
+"168
+[; ;main.c: 168:             buttonClickedPendingEvent=1;
+[e = _buttonClickedPendingEvent -> 1 `i ]
+"169
+[; ;main.c: 169:         }
+}
+[e $U 74  ]
+"170
+[; ;main.c: 170:         else if (buttonReleased) {
+[e :U 73 ]
+[e $ ! != _buttonReleased -> 0 `i 75  ]
+{
+"171
+[; ;main.c: 171:             if (buttonClickedPendingEvent) {
+[e $ ! != _buttonClickedPendingEvent -> 0 `i 76  ]
+{
+"172
+[; ;main.c: 172:                 buttonClickedEvent = 1;
+[e = _buttonClickedEvent -> 1 `i ]
+"173
+[; ;main.c: 173:                 buttonClickedPendingEvent=0;
+[e = _buttonClickedPendingEvent -> 0 `i ]
+"174
+[; ;main.c: 174:             }
+}
+[e :U 76 ]
+"175
+[; ;main.c: 175:         }
+}
+[e $U 77  ]
+"176
+[; ;main.c: 176:         else if (buttonPushed) {
+[e :U 75 ]
+[e $ ! != _buttonPushed -> 0 `i 78  ]
+{
+"177
+[; ;main.c: 177:             ++buttonPressedPeriod;
+[e =+ _buttonPressedPeriod -> 1 `i ]
+"178
+[; ;main.c: 178:             if (buttonPressedPeriod > 50) {
+[e $ ! > _buttonPressedPeriod -> 50 `i 79  ]
+{
+"179
+[; ;main.c: 179:                 buttonLongClickedEvent = 1;
+[e = _buttonLongClickedEvent -> 1 `i ]
+"180
+[; ;main.c: 180:                 buttonClickedPendingEvent=0;
+[e = _buttonClickedPendingEvent -> 0 `i ]
+"181
+[; ;main.c: 181:                 buttonPressedPeriod=0;
+[e = _buttonPressedPeriod -> 0 `i ]
+"182
+[; ;main.c: 182:             }
+}
+[e :U 79 ]
+"183
+[; ;main.c: 183:         }
+}
+[e :U 78 ]
+[e :U 77 ]
+[e :U 74 ]
+"184
+[; ;main.c: 184:         buttonWasPressed = buttonPushed;
+[e = _buttonWasPressed _buttonPushed ]
+"185
+[; ;main.c: 185:         if (state != Armed) {
+[e $ ! != -> _state `ui -> . `E479 2 `ui 80  ]
+{
+"186
+[; ;main.c: 186:             _delay((unsigned long)((20)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"187
+[; ;main.c: 187:         }
+}
+[e :U 80 ]
+"189
+[; ;main.c: 189:         int closeButton = buttonClickedEvent;
+[v _closeButton `i ~T0 @X0 1 a ]
+[e = _closeButton _buttonClickedEvent ]
+"191
+[; ;main.c: 191:         launchDetected = !RB1;
+[e = _launchDetected -> ! _RB1 `i ]
+"192
+[; ;main.c: 192:         switch (state) {
+[e $U 82  ]
+{
+"193
+[; ;main.c: 193:             case Idle: {
+[e :U 83 ]
+{
+"194
+[; ;main.c: 194:                 if (closeButton) {
+[e $ ! != _closeButton -> 0 `i 84  ]
+{
+"195
+[; ;main.c: 195:                     gotoLockedState(&state);
+[e ( _gotoLockedState (1 &U _state ]
+"196
+[; ;main.c: 196:                 }
+}
+[e $U 85  ]
+"197
+[; ;main.c: 197:                 else if (buttonLongClickedEvent) {
+[e :U 84 ]
+[e $ ! != _buttonLongClickedEvent -> 0 `i 86  ]
+{
+"198
+[; ;main.c: 198:                     RA3=1;
+[e = _RA3 -> -> 1 `i `b ]
+"199
+[; ;main.c: 199:                     state = ProgramSeconds;
+[e = _state . `E479 3 ]
+"200
+[; ;main.c: 200:                     displayTime=0;
+[e = _displayTime -> 0 `i ]
+"201
+[; ;main.c: 201:                 }
+}
+[e :U 86 ]
+[e :U 85 ]
+"202
+[; ;main.c: 202:                 break;
+[e $U 81  ]
+"203
+[; ;main.c: 203:             }
+}
+"204
+[; ;main.c: 204:             case Closed: {
+[e :U 87 ]
+{
+"205
+[; ;main.c: 205:                 if (closeButton) {
+[e $ ! != _closeButton -> 0 `i 88  ]
+{
+"206
+[; ;main.c: 206:                     notifyCommandAck();
+[e ( _notifyCommandAck ..  ]
+"207
+[; ;main.c: 207:                     state = Armed;
+[e = _state . `E479 2 ]
+"208
+[; ;main.c: 208:                     RA2 = 1;
+[e = _RA2 -> -> 1 `i `b ]
+"209
+[; ;main.c: 209:                     notifyStateChanged();
+[e ( _notifyStateChanged ..  ]
+"210
+[; ;main.c: 210:                  }
+}
+[e :U 88 ]
+"211
+[; ;main.c: 211:                 break;
+[e $U 81  ]
+"212
+[; ;main.c: 212:             }
+}
+"213
+[; ;main.c: 213:             case Armed: {
+[e :U 89 ]
+{
+"214
+[; ;main.c: 214:                 if (launchDetected) {
+[e $ ! != _launchDetected -> 0 `i 90  ]
+{
+"215
+[; ;main.c: 215:                     RA3=1;
+[e = _RA3 -> -> 1 `i `b ]
+"216
+[; ;main.c: 216:                     _delay((unsigned long)((2600)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2600 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"217
+[; ;main.c: 217:                     deploy();
+[e ( _deploy ..  ]
+"218
+[; ;main.c: 218:                     gotoIdleState(&state);
+[e ( _gotoIdleState (1 &U _state ]
+"219
+[; ;main.c: 219:                 }
+}
+[e :U 90 ]
+"220
+[; ;main.c: 220:                 break;
+[e $U 81  ]
+"221
+[; ;main.c: 221:             }
+}
+"222
+[; ;main.c: 222:             case ProgramSeconds:{
+[e :U 91 ]
+{
+"223
+[; ;main.c: 223:                 if (buttonLongClickedEvent) {
+[e $ ! != _buttonLongClickedEvent -> 0 `i 92  ]
+{
+"224
+[; ;main.c: 224:                     gotoIdleState(&state);
+[e ( _gotoIdleState (1 &U _state ]
+"225
+[; ;main.c: 225:                 }
+}
+[e :U 92 ]
+"226
+[; ;main.c: 226:                 if (buttonClickedEvent) {
+[e $ ! != _buttonClickedEvent -> 0 `i 93  ]
+{
+"227
+[; ;main.c: 227:                     delay = (delay + 1000) % 6000;
+[e = _delay % + _delay -> 1000 `i -> 6000 `i ]
+"228
+[; ;main.c: 228:                     displayTime = 0;
+[e = _displayTime -> 0 `i ]
+"229
+[; ;main.c: 229:                 }
+}
+[e :U 93 ]
+"230
+[; ;main.c: 230:                 displayTime += 20;
+[e =+ _displayTime -> 20 `i ]
+"231
+[; ;main.c: 231:                 if (displayTime % 1000 < 750 )
+[e $ ! < % _displayTime -> 1000 `i -> 750 `i 94  ]
+"232
+[; ;main.c: 232:                 {
+{
+"233
+[; ;main.c: 233:                     if (displayTime < delay) {
+[e $ ! < _displayTime _delay 95  ]
+{
+"234
+[; ;main.c: 234:                         RA1 = 1;
+[e = _RA1 -> -> 1 `i `b ]
+"235
+[; ;main.c: 235:                     }
+}
+[e $U 96  ]
+"236
+[; ;main.c: 236:                     else {
+[e :U 95 ]
+{
+"237
+[; ;main.c: 237:                         RA1 = 0;
+[e = _RA1 -> -> 0 `i `b ]
+"238
+[; ;main.c: 238:                     }
+}
+[e :U 96 ]
+"239
+[; ;main.c: 239:                 }
+}
+[e $U 97  ]
+"240
+[; ;main.c: 240:                 else {
+[e :U 94 ]
+{
+"241
+[; ;main.c: 241:                     RA1 = 0;
+[e = _RA1 -> -> 0 `i `b ]
+"242
+[; ;main.c: 242:                 }
+}
+[e :U 97 ]
+"243
+[; ;main.c: 243:                 displayTime = displayTime % 6000;
+[e = _displayTime % _displayTime -> 6000 `i ]
+"244
+[; ;main.c: 244:                 break;
+[e $U 81  ]
+"245
+[; ;main.c: 245:             }
+}
+"247
+[; ;main.c: 247:         }
+}
+[e $U 81  ]
+[e :U 82 ]
+[e [\ -> _state `ui , $ -> . `E479 0 `ui 83
+ , $ -> . `E479 1 `ui 87
+ , $ -> . `E479 2 `ui 89
+ , $ -> . `E479 3 `ui 91
+ 81 ]
+[e :U 81 ]
+"249
+[; ;main.c: 249:     }
+}
+[e :U 70 ]
+[e $U 71  ]
+[e :U 72 ]
+"251
+[; ;main.c: 251:     return 0;
+[e ) -> 0 `i ]
+[e $UE 69  ]
+"252
+[; ;main.c: 252: }
+[e :UE 69 ]
+}

@@ -1,0 +1,182 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 0 ]
+"92 C:\Users\Quentin\Documents\GitHub\rocket-firmware\guck.X\main.c
+[e E479 State `uc
+Idle 0
+Closed 1
+Armed 2
+ProgramSeconds 3
+]
+"5 D:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"10 D:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"39 C:\Users\Quentin\Documents\GitHub\rocket-firmware\guck.X\main.c
+[v _deploy deploy `(v  1 e 1 0 ]
+"56
+[v _lock lock `(v  1 e 1 0 ]
+"71
+[v _notifyCommandAck notifyCommandAck `(v  1 e 1 0 ]
+"78
+[v _notifyStateChanged notifyStateChanged `(v  1 e 1 0 ]
+"92
+[v _gotoIdleState gotoIdleState `(v  1 e 1 0 ]
+"99
+[v _gotoLockedState gotoLockedState `(v  1 e 1 0 ]
+"107
+[v _main main `(i  1 e 2 0 ]
+"610 C:/Users/Quentin/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+[s S39 . 1 `uc 1 CM 1 0 :3:0 
+`uc 1 CIS 1 0 :1:3 
+`uc 1 C1INV 1 0 :1:4 
+`uc 1 C2INV 1 0 :1:5 
+`uc 1 C1OUT 1 0 :1:6 
+`uc 1 C2OUT 1 0 :1:7 
+]
+"787
+[s S46 . 1 `uc 1 CM0 1 0 :1:0 
+`uc 1 CM1 1 0 :1:1 
+`uc 1 CM2 1 0 :1:2 
+]
+[u S50 . 1 `S39 1 . 1 0 `S46 1 . 1 0 ]
+[v _CMCONbits CMCONbits `VES50  1 e 1 @31 ]
+"1137
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"1374
+[v _CCP1M2 CCP1M2 `VEb  1 e 0 @186 ]
+"1377
+[v _CCP1M3 CCP1M3 `VEb  1 e 0 @187 ]
+"1380
+[v _CCP1X CCP1X `VEb  1 e 0 @189 ]
+"1383
+[v _CCP1Y CCP1Y `VEb  1 e 0 @188 ]
+"1461
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"1464
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"1467
+[v _RA3 RA3 `VEb  1 e 0 @43 ]
+"1482
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"1485
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"1494
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"1563
+[v _T2CKPS0 T2CKPS0 `VEb  1 e 0 @144 ]
+"1566
+[v _T2CKPS1 T2CKPS1 `VEb  1 e 0 @145 ]
+"1593
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"1611
+[v _TRISA1 TRISA1 `VEb  1 e 0 @1065 ]
+"1614
+[v _TRISA2 TRISA2 `VEb  1 e 0 @1066 ]
+"1617
+[v _TRISA3 TRISA3 `VEb  1 e 0 @1067 ]
+"1632
+[v _TRISB0 TRISB0 `VEb  1 e 0 @1072 ]
+"1635
+[v _TRISB1 TRISB1 `VEb  1 e 0 @1073 ]
+"1641
+[v _TRISB3 TRISB3 `VEb  1 e 0 @1075 ]
+"1644
+[v _TRISB4 TRISB4 `VEb  1 e 0 @1076 ]
+"1722
+[v _nRBPU nRBPU `VEb  1 e 0 @1039 ]
+"107 C:\Users\Quentin\Documents\GitHub\rocket-firmware\guck.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"189
+[v main@closeButton closeButton `i  1 a 2 12 ]
+"162
+[v main@buttonReleased buttonReleased `i  1 a 2 2 ]
+"161
+[v main@buttonClicked buttonClicked `i  1 a 2 0 ]
+"144
+[v main@buttonPushed buttonPushed `i  1 a 2 24 ]
+"156
+[v main@displayTime displayTime `i  1 a 2 22 ]
+"153
+[v main@buttonLongClickedEvent buttonLongClickedEvent `i  1 a 2 20 ]
+"151
+[v main@buttonClickedEvent buttonClickedEvent `i  1 a 2 18 ]
+"155
+[v main@delay delay `i  1 a 2 16 ]
+"148
+[v main@buttonWasPressed buttonWasPressed `i  1 a 2 14 ]
+"150
+[v main@buttonClickedPendingEvent buttonClickedPendingEvent `i  1 a 2 10 ]
+"147
+[v main@buttonPressedPeriod buttonPressedPeriod `i  1 a 2 8 ]
+"126
+[v main@launchDetected launchDetected `i  1 a 2 4 ]
+"108
+[v main@state state `E479  1 a 1 26 ]
+"252
+} 0
+"99
+[v _gotoLockedState gotoLockedState `(v  1 e 1 0 ]
+{
+[v gotoLockedState@state state `*.4E479  1 a 1 wreg ]
+[v gotoLockedState@state state `*.4E479  1 a 1 wreg ]
+[v gotoLockedState@state state `*.4E479  1 a 1 6 ]
+"105
+} 0
+"78
+[v _notifyStateChanged notifyStateChanged `(v  1 e 1 0 ]
+{
+"84
+} 0
+"71
+[v _notifyCommandAck notifyCommandAck `(v  1 e 1 0 ]
+{
+"76
+} 0
+"56
+[v _lock lock `(v  1 e 1 0 ]
+{
+"63
+[v lock@i i `i  1 a 2 4 ]
+"57
+[v lock@j j `i  1 a 2 2 ]
+"69
+} 0
+"92
+[v _gotoIdleState gotoIdleState `(v  1 e 1 0 ]
+{
+[v gotoIdleState@state state `*.4E479  1 a 1 wreg ]
+[v gotoIdleState@state state `*.4E479  1 a 1 wreg ]
+[v gotoIdleState@state state `*.4E479  1 a 1 0 ]
+"97
+} 0
+"39
+[v _deploy deploy `(v  1 e 1 0 ]
+{
+"47
+[v deploy@i i `i  1 a 2 3 ]
+"41
+[v deploy@j j `i  1 a 2 1 ]
+"54
+} 0
+"5 D:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
