@@ -33,12 +33,13 @@
 #define TRIS_LAUCHED_DETECTED TRISA3
 
 #define ARM_BUTTON RB4
-#define LAUNCH_DETECT RB1
+#define LAUNCH_DETECT RB5
+#define TRIS_LAUNCH_DETECT TRISB5
 
 #define SERVO_MOTOR RB0
 void deploy() {
 
-    for (int j=0;j<100;++j) {
+    for (int j=0;j<20;++j) {
     SERVO_MOTOR = 1;
     const int val = 1060; // open position
     __delay_us(val);
@@ -54,7 +55,7 @@ void deploy() {
 }
 
 void lock() {
-    for (int j=0;j<100;++j) {
+    for (int j=0;j<20;++j) {
         SERVO_MOTOR = 1;
         const int val = 2400; // locked position
         __delay_us(val);
@@ -76,7 +77,7 @@ void notifyCommandAck() {
 }
 
 void notifyStateChanged() {    
-    __delay_ms(500);
+    __delay_ms(250);
     TMR2ON = 1;
     __delay_ms(250);
     TMR2ON = 0;
@@ -135,12 +136,12 @@ int main() {
     TRIS_LAUCHED_DETECTED = 0; //RB4 as Output PIN for motor
         
     TRISB4 = 1; // Push button
-    TRISB1 = 1; // Launch detection trigger
+    TRIS_LAUNCH_DETECT = 1; // Launch detection trigger
     
     LED_LOCKED=0;
     LED_ARMED=0;
     LED_LAUCHED_DETECTED=0;
-    
+
     int buttonPushed = 0;
     
     int buttonPressed = 0;
@@ -188,7 +189,7 @@ int main() {
         
         int closeButton = buttonClickedEvent;
         
-        launchDetected = !RB1;
+        launchDetected = !LAUNCH_DETECT;
         switch (state) {
             case Idle: {
                 if (closeButton) {
